@@ -116,7 +116,7 @@ export function TeamCards() {
         {/* Gold */}
         <div className="absolute left-[318px] top-[21px] z-10 h-[597px] w-[318px] rounded-r-[24px] border border-line-primary bg-white">
           <div className="absolute left-[24px] top-[40px] flex h-[44px] w-[44px] items-center justify-center">
-            <img src={A.rocketIcon} alt="" className="h-[44px] w-[44px] object-contain" />
+            <img src={A.rocketIcon} alt="" className="h-[44px] w-[44px] scale-125 object-contain" />
           </div>
           <p className="absolute left-[24px] top-[96px] text-[24px] font-bold leading-none text-ink-primary">Gold</p>
           <div className="absolute right-[24px] top-[67px] flex flex-col items-end">

@@ -111,7 +111,7 @@ function HeaderRow({
   return (
     <div className="mb-4 flex w-full items-end justify-between gap-3">
       <div className="flex flex-col items-start">
-        <img src={iconSrc} alt="" className="h-[44px] w-[44px] object-contain" />
+        <img src={iconSrc} alt="" className={`h-[44px] w-[44px] object-contain ${iconSrc === A.rocketIcon ? "scale-125" : ""}`} />
         <p className="mt-3 text-[24px] font-bold leading-none text-ink-primary">{title}</p>
       </div>
       <div className="flex flex-col items-end">
