@@ -57,7 +57,7 @@ const TIERS: Tier[] = [
     savings: (
       <p className="text-[14px] font-medium leading-[1.43] text-ink-secondary">
         <span className="line-through">₹17,950</span>{" "}
-        <span className="text-brand">· Save ₹107,664 yearly</span>
+        <span className="text-success">· Save ₹107,664 yearly</span>
       </p>
     ),
     price: "₹8,975",
