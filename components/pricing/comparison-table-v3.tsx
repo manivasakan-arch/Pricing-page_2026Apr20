@@ -10,17 +10,17 @@ function CellRender({ cell }: { cell: Cell }) {
     case "dash":
       return <Minus className="size-5 text-ink-tertiary" strokeWidth={2} />;
     case "check":
-      return <Check className="size-5 text-ink-primary" strokeWidth={2.5} />;
+      return <Check className="size-[18px] text-ink-primary" strokeWidth={2.5} />;
     case "text":
       if (cell.tone === "magic") {
         return (
-          <span className="text-gradient-magic text-[14px] font-medium leading-[1.43]">
+          <span className="text-gradient-magic text-center text-[14px] font-medium leading-[1.43]">
             {cell.value}
           </span>
         );
       }
       return (
-        <span className="text-[14px] font-normal leading-[1.43] text-ink-primary">
+        <span className="text-center text-[14px] font-normal leading-[1.43] text-ink-primary">
           {cell.value}
         </span>
       );
@@ -68,100 +68,92 @@ export function ComparisonTable({ mode = "individual" }: { mode?: "individual" |
   return (
     <div className="mx-auto w-full max-w-[1000px]">
       <div className="relative w-full">
-        {/* Highlighted Pro column background — spans full table height */}
+        {/* Pro column continuous highlight — connects with sticky summary card above */}
         <div
           aria-hidden
-          className="pointer-events-none absolute top-0 rounded-[12px] bg-[#fff7f2] ring-1 ring-[#ffd9c2]"
-          style={{
-            left: COL_LABEL + COL_TIER,
-            width: COL_TIER,
-            bottom: 0,
-          }}
+          className="pointer-events-none absolute bottom-0 top-0 rounded-b-[12px] bg-[#fff7f2] ring-1 ring-[#ffd9c2]"
+          style={{ left: COL_LABEL + COL_TIER, width: COL_TIER }}
         />
 
         <div className="relative flex w-full flex-col">
           {SECTIONS.map((section, si) => (
-            <motion.section
-              key={section.title}
-              initial={{ opacity: 0, y: 8 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.3, delay: si * 0.03, ease: "easeOut" }}
-              className="flex w-full flex-col"
+          <motion.section
+            key={section.title}
+            initial={{ opacity: 0, y: 8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.3, delay: si * 0.03, ease: "easeOut" }}
+            className="flex w-full flex-col"
+          >
+            {/* Section title row — full width with thick underline */}
+            <div
+              className={clsx(
+                "flex w-full items-center border-b-2 border-ink-primary pb-3",
+                si === 0 ? "pt-0" : "pt-12",
+              )}
             >
-              {/* Section title row */}
-              <div className="flex w-full items-center border-b border-ink-primary pb-3 pt-8">
-                <h3
-                  className="shrink-0 text-[18px] font-bold leading-[1.3] tracking-[-0.01em] text-ink-primary"
+              <h3 className="text-[20px] font-bold leading-[1.3] tracking-[-0.01em] text-ink-primary">
+                {section.title}
+              </h3>
+            </div>
+
+            {/* Rows */}
+            {section.rows.map((row) => (
+              <div
+                key={row.label}
+                className="flex w-full items-center border-b border-line-secondary"
+              >
+                {/* Label */}
+                <div
+                  className="flex h-[60px] shrink-0 items-center gap-2 pr-4"
                   style={{ width: COL_LABEL }}
                 >
-                  {section.title}
-                </h3>
-              </div>
-
-              {/* Rows */}
-              {section.rows.map((row, ri) => (
-                <div
-                  key={row.label}
-                  className={clsx(
-                    "flex w-full items-center",
-                    ri < section.rows.length - 1 &&
-                      "border-b border-line-secondary",
+                  <p className="text-[14px] leading-[1.43] text-ink-primary">
+                    {row.label}
+                  </p>
+                  {row.info && (
+                    <span
+                      title={row.info}
+                      className="inline-flex size-5 shrink-0 items-center justify-center"
+                    >
+                      <Info
+                        className="size-[15px] text-ink-tertiary"
+                        strokeWidth={1.75}
+                      />
+                    </span>
                   )}
-                >
-                  {/* Label */}
-                  <div
-                    className="flex h-14 shrink-0 items-center gap-2 pr-4"
-                    style={{ width: COL_LABEL }}
-                  >
-                    <p className="text-[14px] leading-[1.43] text-ink-primary">
-                      {row.label}
-                    </p>
-                    {row.info && (
-                      <span
-                        title={row.info}
-                        className="inline-flex size-5 shrink-0 items-center justify-center"
-                      >
-                        <Info
-                          className="size-[15px] text-ink-tertiary"
-                          strokeWidth={1.75}
-                        />
-                      </span>
-                    )}
-                    {row.badge && <Badge>{row.badge}</Badge>}
-                  </div>
-
-                  {/* Basic / Free */}
-                  <div
-                    className="flex h-14 shrink-0 items-center justify-center"
-                    style={{ width: COL_TIER }}
-                  >
-                    <CellRender
-                      cell={
-                        mode === "team" ? (row.free ?? DASH) : row.basic
-                      }
-                    />
-                  </div>
-
-                  {/* Pro (highlighted) */}
-                  <div
-                    className="flex h-14 shrink-0 items-center justify-center"
-                    style={{ width: COL_TIER }}
-                  >
-                    <CellRender cell={row.pro} />
-                  </div>
-
-                  {/* Gold */}
-                  <div
-                    className="flex h-14 shrink-0 items-center justify-center"
-                    style={{ width: COL_TIER }}
-                  >
-                    <CellRender cell={row.gold} />
-                  </div>
+                  {row.badge && <Badge>{row.badge}</Badge>}
                 </div>
-              ))}
-            </motion.section>
-          ))}
+
+                {/* Basic / Free */}
+                <div
+                  className="flex h-[60px] shrink-0 items-center justify-center"
+                  style={{ width: COL_TIER }}
+                >
+                  <CellRender
+                    cell={mode === "team" ? (row.free ?? DASH) : row.basic}
+                  />
+                </div>
+
+                {/* Pro */}
+                <div
+                  className="flex h-[60px] shrink-0 items-center justify-center"
+                  style={{ width: COL_TIER }}
+                >
+                  <CellRender cell={row.pro} />
+                </div>
+
+                {/* Gold */}
+                <div
+                  className="flex h-[60px] shrink-0 items-center justify-center"
+                  style={{ width: COL_TIER }}
+                >
+                  <CellRender cell={row.gold} />
+                </div>
+              </div>
+            ))}
+          </motion.section>
+        ))}
         </div>
       </div>
     </div>
