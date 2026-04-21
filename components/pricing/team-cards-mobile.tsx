@@ -73,7 +73,7 @@ export function TeamCardsMobile() {
     <div className="flex flex-col gap-3">
       {/* Pro (highlighted, first) */}
       <CardShell highlighted>
-        <div className="mb-4 flex w-full items-start justify-between gap-3">
+        <div className="mb-4 flex w-full items-end justify-between gap-3">
           <div className="flex flex-col items-start">
             <img src={A.rocketIcon} alt="" className="h-[44px] w-[44px] object-contain" />
             <p className="mt-3 text-[24px] font-bold leading-none text-ink-primary">Pro</p>
@@ -118,7 +118,7 @@ export function TeamCardsMobile() {
 
       {/* Gold */}
       <CardShell>
-        <div className="mb-4 flex w-full items-start justify-between gap-3">
+        <div className="mb-4 flex w-full items-end justify-between gap-3">
           <div className="flex flex-col items-start">
             <img src={A.spaceshipIcon} alt="" className="h-[37.4px] w-[37.4px] object-contain" />
             <p className="mt-3 text-[24px] font-bold leading-none text-ink-primary">Gold</p>
