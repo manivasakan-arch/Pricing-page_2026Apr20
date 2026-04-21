@@ -14,6 +14,17 @@ function Countdown() {
   return <span className="text-[#171717] tabular-nums">{mm}:{ss}</span>;
 }
 
+function BuyTooltip({ text }: { text: string }) {
+  return (
+    <div className="pointer-events-none absolute left-1/2 top-full z-40 mt-2 -translate-x-1/2 opacity-0 transition-opacity group-hover/buy:opacity-100">
+      <div className="absolute -top-1 left-1/2 -translate-x-1/2 border-[5px] border-transparent border-b-[#1a1a1a]" />
+      <div className="w-[220px] rounded-[8px] bg-[#1a1a1a] px-3 py-2 text-center text-[12px] leading-[1.4] text-white">
+        {text}
+      </div>
+    </div>
+  );
+}
+
 type Tier = {
   name: string;
   savings?: React.ReactNode;
@@ -24,6 +35,7 @@ type Tier = {
   ctaVariant: "muted" | "primary" | "outline";
   savingsInvisible?: boolean;
   withTimer?: boolean;
+  tooltip: string;
 };
 
 const TIERS: Tier[] = [
@@ -36,6 +48,7 @@ const TIERS: Tier[] = [
     subnote: "billed yearly",
     cta: "Get Basic Plan",
     ctaVariant: "outline",
+    tooltip: "For those who want to make simple decks occasionally",
   },
   {
     name: "Pro",
@@ -51,6 +64,7 @@ const TIERS: Tier[] = [
     cta: "Get Pro Plan",
     ctaVariant: "primary",
     withTimer: true,
+    tooltip: "For those who want AI to craft polished, on-brand decks regularly",
   },
   {
     name: "Gold",
@@ -65,6 +79,7 @@ const TIERS: Tier[] = [
     subnote: "billed yearly",
     cta: "Get Gold Plan",
     ctaVariant: "outline",
+    tooltip: "For those who want the best AI models to lead mission-critical decks",
   },
 ];
 
@@ -115,6 +130,7 @@ export function PriceSummary() {
                 </div>
               </div>
 
+              <div className="group/buy relative w-full">
               <button
                 type="button"
                 className={clsx(
@@ -144,6 +160,8 @@ export function PriceSummary() {
                   t.cta
                 )}
               </button>
+                <BuyTooltip text={t.tooltip} />
+              </div>
             </div>
           ))}
         </div>
