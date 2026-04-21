@@ -56,7 +56,7 @@ export function TeamCards() {
           </div>
           <p className="absolute left-[24px] top-[113px] text-[24px] font-bold leading-none text-ink-primary">Pro</p>
           <div className="absolute right-[24px] top-[88px] flex flex-col items-end">
-            <p className="text-right text-[16px] font-medium leading-[20px] text-ink-primary line-through">₹1,500</p>
+            <p className="text-right text-[16px] font-medium leading-[20px] text-ink-tertiary line-through">₹1,500</p>
             <p className="text-right leading-none">
               <span className="text-[24px] font-bold text-ink-primary">₹1,350</span>
               <span className="text-[14px] leading-[1.43] text-ink-tertiary">/mo</span>
@@ -99,7 +99,7 @@ export function TeamCards() {
           </div>
           <p className="absolute left-[24px] top-[96px] text-[24px] font-bold leading-none text-ink-primary">Gold</p>
           <div className="absolute right-[24px] top-[67px] flex flex-col items-end">
-            <p className="text-right text-[16px] font-medium leading-[20px] text-ink-primary line-through">₹35,900</p>
+            <p className="text-right text-[16px] font-medium leading-[20px] text-ink-tertiary line-through">₹35,900</p>
             <p className="text-right leading-none">
               <span className="text-[24px] font-bold text-ink-primary">₹17,950</span>
               <span className="text-[14px] leading-[1.43] text-ink-tertiary">/mo</span>

@@ -76,7 +76,7 @@ export function IndividualCards() {
           </div>
           <p className="absolute left-[24px] top-[100px] text-[24px] font-bold leading-none text-ink-primary">Basic</p>
           <div className="absolute right-[24px] top-[80px] flex flex-col items-end">
-            <p className="text-right text-[16px] font-medium leading-[20px] text-ink-primary line-through opacity-0">₹1,111</p>
+            <p className="text-right text-[16px] font-medium leading-[20px] text-ink-tertiary line-through opacity-0">₹1,111</p>
             <p className="text-right leading-none">
               <span className="text-[24px] font-bold text-ink-primary">₹374</span>
               <span className="text-[14px] leading-[1.43] text-ink-tertiary">/mo</span>
@@ -128,7 +128,7 @@ export function IndividualCards() {
 
           {/* price */}
           <div className="absolute right-[22px] top-[101px] flex flex-col items-end">
-            <p className="text-right text-[16px] font-medium leading-[20px] text-ink-primary line-through">₹750</p>
+            <p className="text-right text-[16px] font-medium leading-[20px] text-ink-tertiary line-through">₹750</p>
             <p className="text-right leading-none">
               <span className="text-[24px] font-bold text-ink-primary">₹675</span>
               <span className="text-[14px] leading-[1.43] text-ink-tertiary">/mo</span>
@@ -186,7 +186,7 @@ export function IndividualCards() {
           </div>
 
           <div className="absolute right-[24px] top-[80px] flex flex-col items-end">
-            <p className={`text-right text-[16px] font-medium leading-[20px] text-ink-primary line-through transition-opacity duration-200 ${yearly ? "opacity-100" : "opacity-0"}`}>₹17,950</p>
+            <p className={`text-right text-[16px] font-medium leading-[20px] text-ink-tertiary line-through transition-opacity duration-200 ${yearly ? "opacity-100" : "opacity-0"}`}>₹17,950</p>
             <AnimatePresence mode="wait">
               <motion.p
                 key={yearly ? "gold-y" : "gold-m"}
