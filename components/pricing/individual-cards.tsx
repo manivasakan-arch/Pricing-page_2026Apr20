@@ -113,7 +113,7 @@ export function IndividualCards() {
           }}
         >
           <div className="absolute left-[22px] top-[65px] flex h-[44px] items-center">
-            <img src={A.rocketIcon} alt="" className="h-[44px] w-[44px] object-contain" />
+            <img src="/pro-jet-icon.png" alt="" className="h-[44px] w-[44px] object-contain" />
           </div>
           <p className="absolute left-[22px] top-[121px] text-[24px] font-bold leading-none text-ink-primary">Pro</p>
 
