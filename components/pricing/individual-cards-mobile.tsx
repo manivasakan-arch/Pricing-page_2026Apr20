@@ -202,7 +202,6 @@ export function IndividualCardsMobile() {
         <p className="mt-4 text-center text-[12px] leading-[1.33] text-ink-tertiary">No offers available for this plan</p>
         <div className="mt-4 flex flex-col gap-4 items-start">
           <Row iconSrc={A.coinIcon} text={<><span className="font-medium text-ink-primary">X,XXX </span><span>credits</span></>} />
-          <p className="w-full text-[14px] font-medium leading-[1.43] text-ink-primary">Includes:</p>
           <Row iconSrc={A.starFour} text="Standard AI models" />
           <Row iconSrc={A.filePpt} text="Export to PowerPoint and PDF" />
           <Row iconSrc={A.paintBrushBroad} text="Basic brand customization" />
