@@ -67,34 +67,34 @@ function Countdown() {
 export function IndividualCards() {
   const [yearly, setYearly] = useState(true);
   return (
-    <div className="mx-auto w-full max-w-[864px]">
-      <div className="relative h-[612px] w-full">
+    <div className="mx-auto w-full max-w-[954px]">
+      <div className="relative h-[536px] w-full">
         {/* Basic card */}
-        <div className="absolute left-0 top-[21px] z-10 h-[551px] w-[288px] rounded-l-[24px] border border-line-primary bg-white">
-          <div className="absolute left-[23px] top-[23px] h-[60px] w-[60px] overflow-visible">
+        <div className="absolute left-0 top-[21px] z-10 h-[495px] w-[318px] rounded-l-[24px] border border-line-primary bg-white">
+          <div className="absolute left-[24px] top-[44px] h-[44px] w-[44px] overflow-visible">
             <img src={A.cessnaPlaneIcon} alt="" className="h-full w-full object-contain" style={{ transform: "rotate(2.22deg)" }} />
           </div>
-          <p className="absolute left-[23px] top-[91px] text-[24px] font-bold leading-none text-ink-primary">Basic</p>
-          <div className="absolute right-[23px] top-[66px] flex flex-col items-end">
+          <p className="absolute left-[24px] top-[100px] text-[24px] font-bold leading-none text-ink-primary">Basic</p>
+          <div className="absolute right-[24px] top-[80px] flex flex-col items-end">
             <p className="text-right leading-none">
               <span className="text-[28px] font-bold text-ink-primary">₹374</span>
               <span className="text-[14px] leading-[1.43] text-ink-tertiary">/mo</span>
             </p>
             <p className="text-right text-[14px] leading-[1.43] text-ink-tertiary">billed yearly</p>
           </div>
-          <div className="group/buy absolute left-[23px] top-[172px] w-[240px]">
+          <div className="group/buy absolute left-[24px] top-[168px] w-[270px]">
             <button
               type="button"
-              className="flex h-[60px] w-full items-center justify-center rounded-[4px] border border-brand transition hover:bg-brand-50 active:bg-brand-100"
+              className="flex h-[48px] w-full items-center justify-center rounded-[4px] border border-brand transition hover:bg-brand-50 active:bg-brand-100"
             >
               <p className="text-[16px] font-bold leading-[16px] text-brand">Buy Now</p>
             </button>
             <BuyTooltip text="For those who want to make simple decks occasionally" />
           </div>
-          <div className="absolute left-[23px] top-[242px] flex w-[240px] items-center justify-center gap-2">
+          <div className="absolute left-[24px] top-[226px] flex w-[270px] items-center justify-center gap-2">
             <p className="text-[12px] leading-[1.33] text-ink-tertiary">No offers available for this plan</p>
           </div>
-          <div className="absolute left-1/2 top-[278px] flex w-[240px] -translate-x-1/2 flex-col gap-4 items-start">
+          <div className="absolute left-1/2 top-[262px] flex w-[270px] -translate-x-1/2 flex-col gap-4 items-start">
             <Row iconSrc={A.coinIcon} text={<><span className="font-medium text-ink-primary">X,XXX </span><span>credits</span></>} />
             <p className="w-full text-[14px] font-medium leading-[1.43] text-ink-primary">All Pro features plus the following:</p>
             <Row iconSrc={A.starFour} text="Frontier AI models and agents" />
@@ -105,16 +105,16 @@ export function IndividualCards() {
 
         {/* Pro card (highlighted, taller, floats above) */}
         <div
-          className="absolute left-[288px] top-0 z-30 h-[592px] w-[288px] overflow-visible rounded-[24px] border-2 border-brand-border shadow-[0px_1px_2px_0px_rgba(0,0,0,0.08),0px_4px_10px_0px_rgba(0,0,0,0.06)]"
+          className="absolute left-[318px] top-0 z-30 h-[536px] w-[318px] overflow-visible rounded-[24px] border-2 border-brand-border shadow-[0px_1px_2px_0px_rgba(0,0,0,0.08),0px_4px_10px_0px_rgba(0,0,0,0.06)]"
           style={{
             backgroundImage:
               "linear-gradient(127.06deg, #ffffff 2.19%, #ffffff 41.38%, #ffeee5 98.14%)",
           }}
         >
-          <div className="absolute left-[22px] top-[23px] flex h-[80px] items-center">
-            <img src={A.rocketIcon} alt="" className="h-[80px] w-[80px] object-contain" />
+          <div className="absolute left-[22px] top-[65px] flex h-[44px] items-center">
+            <img src={A.rocketIcon} alt="" className="h-[44px] w-[44px] object-contain" />
           </div>
-          <p className="absolute left-[22px] top-[111px] text-[24px] font-bold leading-none text-ink-primary">Pro</p>
+          <p className="absolute left-[22px] top-[121px] text-[24px] font-bold leading-none text-ink-primary">Pro</p>
 
           {/* POPULAR badge */}
           <div
@@ -126,7 +126,7 @@ export function IndividualCards() {
           </div>
 
           {/* price */}
-          <div className="absolute right-[22px] top-[86px] flex flex-col items-end">
+          <div className="absolute right-[22px] top-[101px] flex flex-col items-end">
             <p className="text-right text-[16px] font-medium leading-[20px] text-ink-primary line-through">₹750</p>
             <p className="text-right leading-none">
               <span className="text-[28px] font-bold text-ink-primary">₹675</span>
@@ -136,15 +136,15 @@ export function IndividualCards() {
           </div>
 
           {/* Buy Now button with SAVE badge */}
-          <div className="group/buy absolute left-[22px] top-[192px] w-[240px]">
+          <div className="group/buy absolute left-[22px] top-[188px] w-[270px]">
             <button
               type="button"
-              className="group relative h-[60px] w-full overflow-hidden rounded-[4px] transition hover:shadow-[0_6px_14px_-4px_rgba(255,85,0,0.45)]"
+              className="group relative h-[48px] w-full overflow-hidden rounded-[4px] transition hover:shadow-[0_6px_14px_-4px_rgba(255,85,0,0.45)]"
               style={{ backgroundImage: "linear-gradient(to bottom, #ff732d, #ff5500)" }}
             >
               <span className="absolute inset-0 bg-black/0 transition group-hover:bg-black/10 group-active:bg-black/15" />
               <p className="absolute left-[20px] top-1/2 -translate-y-1/2 text-[16px] font-bold leading-[16px] text-white">Buy Now</p>
-              <div className="absolute left-[153px] top-[8px] flex items-center justify-center rounded-[2px] bg-white px-[10px] py-[6px]">
+              <div className="absolute right-[8px] top-1/2 -translate-y-1/2 flex items-center justify-center rounded-[2px] bg-white px-[10px] py-[4px]">
                 <p className="text-center text-[12px] leading-[1.33]">
                   <span className="text-brand">SAVE 10%</span>
                   <br aria-hidden />
@@ -157,13 +157,13 @@ export function IndividualCards() {
           </div>
 
           {/* You'll save note */}
-          <div className="absolute left-[22px] top-[262px] flex w-[240px] items-center justify-center gap-2">
+          <div className="absolute left-[22px] top-[246px] flex w-[270px] items-center justify-center gap-2">
             <CheckCircle size={14} weight="fill" className="shrink-0 text-success" />
             <p className="text-[12px] leading-[1.33] text-success">{"You'll save ₹900 this year"}</p>
           </div>
 
           {/* features */}
-          <div className="absolute left-1/2 top-[298px] flex w-[240px] -translate-x-1/2 flex-col gap-4 items-start">
+          <div className="absolute left-1/2 top-[282px] flex w-[270px] -translate-x-1/2 flex-col gap-4 items-start">
             <Row iconSrc={A.coinIcon} text={<><span className="text-ink-secondary">X,XXX </span><span>credits</span></>} />
             <p className="w-full text-[14px] font-medium leading-[1.43] text-ink-primary">All Free features plus the following:</p>
             <Row iconSrc={A.starFour} text="Advanced AI models and agents" />
@@ -174,17 +174,17 @@ export function IndividualCards() {
         </div>
 
         {/* Gold card */}
-        <div className="absolute left-[576px] top-[21px] z-20 h-[551px] w-[288px] rounded-r-[24px] border border-line-primary bg-white">
-          <div className="absolute left-[23px] top-[27px] flex items-center p-[4.5px]">
-            <img src={A.spaceshipIcon} alt="" className="h-[51px] w-[51px] object-contain" />
+        <div className="absolute left-[636px] top-[21px] z-20 h-[495px] w-[318px] rounded-r-[24px] border border-line-primary bg-white">
+          <div className="absolute left-[24px] top-[44px] flex h-[44px] w-[44px] items-center">
+            <img src={A.spaceshipIcon} alt="" className="h-[44px] w-[44px] object-contain" />
           </div>
-          <p className="absolute left-[23px] top-[95px] text-[24px] font-bold leading-none text-ink-primary">Gold</p>
+          <p className="absolute left-[24px] top-[100px] text-[24px] font-bold leading-none text-ink-primary">Gold</p>
 
-          <div className="absolute right-[23px] top-[23px]">
+          <div className="absolute right-[24px] top-[22px]">
             <YearlyToggle on={yearly} onToggle={() => setYearly((v) => !v)} />
           </div>
 
-          <div className="absolute right-[23px] top-[66px] flex flex-col items-end">
+          <div className="absolute right-[24px] top-[80px] flex flex-col items-end">
             <p className={`text-right text-[16px] font-medium leading-[20px] text-ink-primary line-through transition-opacity duration-200 ${yearly ? "opacity-100" : "opacity-0"}`}>₹17,950</p>
             <AnimatePresence mode="wait">
               <motion.p
@@ -202,17 +202,17 @@ export function IndividualCards() {
             <p className="text-right text-[14px] leading-[1.43] text-ink-tertiary">{yearly ? "billed yearly" : "billed monthly"}</p>
           </div>
 
-          <div className="group/buy absolute left-[23px] top-[172px] w-[240px]">
+          <div className="group/buy absolute left-[24px] top-[168px] w-[270px]">
             <button
               type="button"
-              className="flex h-[60px] w-full items-center justify-center rounded-[4px] border border-brand transition hover:bg-brand-50 active:bg-brand-100"
+              className="flex h-[48px] w-full items-center justify-center rounded-[4px] border border-brand transition hover:bg-brand-50 active:bg-brand-100"
             >
               <p className="text-[16px] font-bold leading-[16px] text-brand">Buy Now</p>
             </button>
             <BuyTooltip text="For those who want the best AI models to lead mission-critical decks" />
           </div>
 
-          <div className="absolute left-[23px] top-[242px] flex w-[240px] items-center justify-center gap-2">
+          <div className="absolute left-[24px] top-[226px] flex w-[270px] items-center justify-center gap-2">
             <AnimatePresence mode="wait">
               {yearly ? (
                 <motion.span
@@ -243,7 +243,7 @@ export function IndividualCards() {
             </AnimatePresence>
           </div>
 
-          <div className="absolute left-1/2 top-[278px] flex w-[240px] -translate-x-1/2 flex-col gap-4 items-start">
+          <div className="absolute left-1/2 top-[262px] flex w-[270px] -translate-x-1/2 flex-col gap-4 items-start">
             <Row iconSrc={A.coinIcon} text={<><span className="font-medium text-ink-primary">XX,XXX </span><span>credits</span></>} />
             <p className="w-full text-[14px] font-medium leading-[1.43] text-ink-primary">All Pro features plus the following:</p>
             <Row iconSrc={A.starFour} text="Frontier AI models and agents" />
