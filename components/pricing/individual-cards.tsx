@@ -97,10 +97,10 @@ export function IndividualCards() {
           </div>
           <div className="absolute left-1/2 top-[262px] flex w-[270px] -translate-x-1/2 flex-col gap-4 items-start">
             <Row iconSrc={A.coinIcon} text={<><span className="font-medium text-ink-primary">X,XXX </span><span>credits</span></>} />
-            <p className="w-full text-[14px] font-medium leading-[1.43] text-ink-primary">All Pro features plus the following:</p>
-            <Row iconSrc={A.starFour} text="Frontier AI models and agents" />
-            <Row iconSrc={A.paintBrushBroad} text="Advanced brand customization" />
-            <Row iconSrc={A.files} text="Projects with a shared knowledge base" />
+            <p className="w-full text-[14px] font-medium leading-[1.43] text-ink-primary">Includes:</p>
+            <Row iconSrc={A.starFour} text="Standard AI models" />
+            <Row iconSrc={A.filePpt} text="Export to PowerPoint and PDF" />
+            <Row iconSrc={A.paintBrushBroad} text="Basic brand customization" />
           </div>
         </div>
 
@@ -166,7 +166,7 @@ export function IndividualCards() {
           {/* features */}
           <div className="absolute left-1/2 top-[282px] flex w-[270px] -translate-x-1/2 flex-col gap-4 items-start">
             <Row iconSrc={A.coinIcon} text={<><span className="text-ink-secondary">X,XXX </span><span>credits</span></>} />
-            <p className="w-full text-[14px] font-medium leading-[1.43] text-ink-primary">All Free features plus the following:</p>
+            <p className="w-full text-[14px] font-medium leading-[1.43] text-ink-primary">All Basic features plus:</p>
             <Row iconSrc={A.starFour} text="Advanced AI models and agents" />
             <Row iconSrc={A.filePpt} text="Export to PowerPoint and Google Slides" />
             <Row iconSrc={A.chartBar} text="Presentation tracking & analytics" />
@@ -246,7 +246,7 @@ export function IndividualCards() {
 
           <div className="absolute left-1/2 top-[262px] flex w-[270px] -translate-x-1/2 flex-col gap-4 items-start">
             <Row iconSrc={A.coinIcon} text={<><span className="font-medium text-ink-primary">XX,XXX </span><span>credits</span></>} />
-            <p className="w-full text-[14px] font-medium leading-[1.43] text-ink-primary">All Pro features plus the following:</p>
+            <p className="w-full text-[14px] font-medium leading-[1.43] text-ink-primary">All Pro features plus:</p>
             <Row iconSrc={A.starFour} text="Frontier AI models and agents" />
             <Row iconSrc={A.paintBrushBroad} text="Advanced brand customization" />
             <Row iconSrc={A.files} text="Projects with a shared knowledge base" />

@@ -1,7 +1,7 @@
 const TESTIMONIALS = [
   {
     key: "patrick",
-    quote: "Finally sleep well before big presentations. No more 3am panic!",
+    quote: "I finally sleep well before big presentations. No more 3 AM panic!",
     name: "Patrick",
     role: "Marketing • Fortune 500 Tech",
     avatar: "/testimonials/patrick.png",
@@ -17,7 +17,7 @@ const TESTIMONIALS = [
   {
     key: "walter",
     quote:
-      "Used to stress for weeks before investor pitches. Now I create stunning decks in 20 minutes.",
+      "I used to stress for weeks before investor pitches. Now I create stunning decks in 20 minutes.",
     name: "Walter",
     role: "Product Manager • Fintech Unicorn",
     avatar: "/testimonials/walter.png",
