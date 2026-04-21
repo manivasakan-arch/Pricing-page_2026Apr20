@@ -77,7 +77,7 @@ const TEAM_TIERS: Tier[] = [
   {
     name: "Free Starter",
     price: "0",
-    subnote: "14-day trial only",
+    subnote: "7-day trial only",
     cta: "Current Plan",
     ctaVariant: "muted",
     tooltip: "Your current trial plan",
