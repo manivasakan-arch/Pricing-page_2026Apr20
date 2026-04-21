@@ -1,4 +1,18 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import clsx from "clsx";
+
+function Countdown() {
+  const [s, setS] = useState(2839);
+  useEffect(() => {
+    const id = setInterval(() => setS((x) => (x > 0 ? x - 1 : 2839)), 1000);
+    return () => clearInterval(id);
+  }, []);
+  const mm = String(Math.floor(s / 60)).padStart(2, "0");
+  const ss = String(s % 60).padStart(2, "0");
+  return <span className="text-[#171717] tabular-nums">{mm}:{ss}</span>;
+}
 
 type Tier = {
   name: string;
@@ -9,6 +23,7 @@ type Tier = {
   cta: string;
   ctaVariant: "muted" | "primary" | "outline";
   savingsInvisible?: boolean;
+  withTimer?: boolean;
 };
 
 const TIERS: Tier[] = [
@@ -35,6 +50,7 @@ const TIERS: Tier[] = [
     subnote: "billed yearly",
     cta: "Get Pro Plan",
     ctaVariant: "primary",
+    withTimer: true,
   },
   {
     name: "Gold",
@@ -113,6 +129,15 @@ export function PriceSummary() {
                 )}
               >
                 {t.cta}
+                {t.withTimer && (
+                  <div className="absolute right-[4px] top-1/2 flex -translate-y-1/2 items-center justify-center rounded-[2px] bg-white px-[6px] py-[2px]">
+                    <p className="text-center text-[9px] leading-[1.2]">
+                      <span className="font-medium text-brand">SAVE 10%</span>
+                      <br aria-hidden />
+                      <span className="text-ink-tertiary">FOR</span> <Countdown />
+                    </p>
+                  </div>
+                )}
               </button>
             </div>
           ))}

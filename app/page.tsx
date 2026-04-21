@@ -33,7 +33,13 @@ export default function PricingPage() {
         <Testimonials />
       </section>
 
-      <section className="sticky top-0 z-30 mt-[84px] -mx-6 hidden bg-white/85 px-6 backdrop-blur-md backdrop-saturate-150 md:block">
+      <section className="mt-[84px] hidden text-center md:block">
+        <h2 className="text-[24px] font-normal leading-[1.3] tracking-[-0.01em] text-ink-primary">
+          Compare features across plans
+        </h2>
+      </section>
+
+      <section className="sticky top-0 z-30 mt-8 -mx-6 hidden bg-white/85 px-6 backdrop-blur-md backdrop-saturate-150 md:block">
         <PriceSummary />
       </section>
 
