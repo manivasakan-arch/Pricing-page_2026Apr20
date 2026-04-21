@@ -1,7 +1,8 @@
 export type Cell =
   | { kind: "dash" }
   | { kind: "check" }
-  | { kind: "text"; value: string; tone?: "default" | "magic" };
+  | { kind: "text"; value: string; tone?: "default" | "magic" }
+  | { kind: "iconText"; icon: string; iconWidth: number; value: string; tone?: "default" | "magic" };
 
 export type Row = {
   label: string;
@@ -36,9 +37,9 @@ export const SECTIONS: Section[] = [
       {
         label: "AI models",
         info: "Choose from basic to frontier AI models for smarter content, sharper designs, and better output quality.",
-        basic: text("Standard"),
-        pro: text("Advanced"),
-        gold: text("Frontier Models", "magic"),
+        basic: { kind: "iconText", icon: "/ai-tier/standard.svg", iconWidth: 30, value: "Standard" },
+        pro: { kind: "iconText", icon: "/ai-tier/advanced.svg", iconWidth: 40, value: "Advanced" },
+        gold: { kind: "iconText", icon: "/ai-tier/frontier.svg", iconWidth: 50, value: "Frontier Models", tone: "magic" },
       },
       {
         label: "Generation Speed",

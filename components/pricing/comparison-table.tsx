@@ -31,6 +31,30 @@ function CellRender({ cell }: { cell: Cell }) {
           {cell.value}
         </span>
       );
+    case "iconText": {
+      const isMagic = cell.tone === "magic";
+      return (
+        <span className="inline-flex items-center gap-2">
+          <img
+            src={cell.icon}
+            width={cell.iconWidth}
+            height={20}
+            alt=""
+            aria-hidden
+            className="shrink-0"
+          />
+          <span
+            className={
+              isMagic
+                ? "text-gradient-magic text-[14px] font-medium leading-[1.43]"
+                : "text-[14px] font-normal leading-[1.43] text-ink-primary"
+            }
+          >
+            {cell.value}
+          </span>
+        </span>
+      );
+    }
   }
 }
 
