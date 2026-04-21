@@ -1,0 +1,87 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import { ChevronDown, Check } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import clsx from "clsx";
+
+const OPTIONS = Array.from({ length: 11 }, (_, i) => i + 1);
+const DISCOUNT_THRESHOLD = 5;
+
+export function UserSelect({
+  value,
+  onChange,
+}: {
+  value: number;
+  onChange: (n: number) => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function onClick(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    }
+    window.addEventListener("mousedown", onClick);
+    return () => window.removeEventListener("mousedown", onClick);
+  }, []);
+
+  return (
+    <div ref={ref} className="relative w-full">
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        className="flex w-full items-center justify-between rounded-md border border-line-primary bg-white px-3 py-2 text-sm font-medium text-ink-primary transition hover:border-ink-secondary"
+      >
+        <span>
+          {value} {value === 1 ? "user" : "users"}
+        </span>
+        <ChevronDown
+          className={clsx("h-4 w-4 text-ink-secondary transition", open && "rotate-180")}
+        />
+      </button>
+      <AnimatePresence>
+        {open && (
+          <motion.ul
+            initial={{ opacity: 0, y: -4, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -4, scale: 0.98 }}
+            transition={{ duration: 0.14, ease: "easeOut" }}
+            className="absolute left-0 right-0 top-full z-20 mt-1 max-h-64 overflow-auto rounded-[16px] border border-line-secondary bg-white py-[12px] shadow-[0px_0px_0px_1px_rgba(26,26,26,0.06),0px_1px_2px_0px_rgba(26,26,26,0.06),0px_4px_6px_0px_rgba(26,26,26,0.06),0px_24px_40px_0px_rgba(26,26,26,0.06)]"
+          >
+            {OPTIONS.map((n) => (
+              <li key={n}>
+                {n === DISCOUNT_THRESHOLD && (
+                  <>
+                    <div className="mx-[8px] my-[4px] h-px bg-line-secondary" />
+                    <div className="px-[8px] pb-[4px]">
+                      <span className="inline-flex items-center rounded-[6px] bg-success px-[10px] py-[2px] text-[12px] leading-[1.33] text-white">
+                        20% Off
+                      </span>
+                    </div>
+                  </>
+                )}
+                <button
+                  type="button"
+                  onClick={() => {
+                    onChange(n);
+                    setOpen(false);
+                  }}
+                  className={clsx(
+                    "flex w-full items-center justify-between px-[8px] py-[12px] h-[36px] text-[14px] leading-[1.43] transition",
+                    n === value
+                      ? "text-ink-primary"
+                      : "text-ink-primary hover:bg-surface-secondary",
+                  )}
+                >
+                  <span>{n} {n === 1 ? "user" : "users"}</span>
+                  {n === value && <Check className="h-4 w-4 text-ink-primary" strokeWidth={1.5} />}
+                </button>
+              </li>
+            ))}
+          </motion.ul>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}

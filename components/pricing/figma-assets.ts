@@ -1,0 +1,33 @@
+export const FIGMA_ASSETS = {
+  paperPlaneIcon: "https://www.figma.com/api/mcp/asset/f33b7317-b2b6-4442-9b07-5fbbe5d27762",
+  cessnaPlaneIcon: "https://www.figma.com/api/mcp/asset/766e6914-94d9-40cc-b0e2-e2750249800e",
+  rocketIcon: "https://www.figma.com/api/mcp/asset/8fbbfe40-1b85-4d33-991e-ff0e7a669cc3",
+  spaceshipIcon: "https://www.figma.com/api/mcp/asset/a74500ea-2dfa-4ccf-b0cb-dbeb6a0735b1",
+
+  coinIcon: "https://www.figma.com/api/mcp/asset/9737e92e-d454-424f-94e1-672c3e47b1fd",
+  coinIconSmall: "https://www.figma.com/api/mcp/asset/2e2d0aba-2add-4566-91c9-18f3259b16c7",
+  presentationChart: "https://www.figma.com/api/mcp/asset/0adf2af7-46dc-4cb8-be5b-964e81063cb6",
+  starFour: "https://www.figma.com/api/mcp/asset/32167138-cc10-4f77-855c-657233972c26",
+  filePpt: "https://www.figma.com/api/mcp/asset/0102000e-c186-49ab-8d65-04ef015434db",
+  paintBrushBroad: "https://www.figma.com/api/mcp/asset/d7200c6b-fc70-4d75-baa5-32cdf3717f1e",
+  files: "https://www.figma.com/api/mcp/asset/9c9bd480-09cc-4026-afe6-66dd41e9a08d",
+  chartBar: "https://www.figma.com/api/mcp/asset/e25a3900-caa3-4e4b-bda7-b6e3b70e0258",
+  checkCircle: "https://www.figma.com/api/mcp/asset/c97ab8b0-84b8-47c0-bc4d-24b7cf20ff92",
+
+  logoMicrosoft: "https://www.figma.com/api/mcp/asset/30811974-d2e6-4905-8c43-d7cd09eede62",
+  logoGoogle: "https://www.figma.com/api/mcp/asset/934f6c9c-4db9-41b1-8599-024d986d63de",
+  logoAdobeMark: "https://www.figma.com/api/mcp/asset/3130da24-c2d6-4465-8ab2-9fa68fe1c1fe",
+  logoAdobeWord: "https://www.figma.com/api/mcp/asset/dbb6767b-daf4-4485-8066-ff1a0f45ade3",
+  logoMeta: "https://www.figma.com/api/mcp/asset/de37eb6b-e594-47c1-b9dd-eaeca52655b6",
+  logoMcKinseyScript: "https://www.figma.com/api/mcp/asset/bf36ad37-1a51-456f-bf9b-cc221cabb1fd",
+  logoMcKinseyAlt: "https://www.figma.com/api/mcp/asset/b54d7574-75e0-4078-9570-182d0556a6e2",
+  logoAmazon: "https://www.figma.com/api/mcp/asset/a6c024e5-553a-4d87-92c9-211138012dd5",
+  logoNotion: "https://www.figma.com/api/mcp/asset/cce08ab7-8986-4625-8b2a-85eed3424cc0",
+  logoEY: "https://www.figma.com/api/mcp/asset/9fd45d81-88e4-4685-a96d-6c9178ab4cf0",
+  logoEYAlt: "https://www.figma.com/api/mcp/asset/8a988ac1-03d8-4544-9945-1fb68263a1bc",
+  logoBCG: "https://www.figma.com/api/mcp/asset/55260c7c-f05a-4609-b066-00b8381d77df",
+
+  avatarPatrick: "https://www.figma.com/api/mcp/asset/b8aa9ccb-2a15-494d-8d75-14336e281cfa",
+  avatarAngela: "https://www.figma.com/api/mcp/asset/45751c38-785c-4191-92d6-5f65e1929212",
+  avatarWalter: "https://www.figma.com/api/mcp/asset/87f04af7-85e6-4d59-a4d8-1179ee6ed669",
+};

@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-inter: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+html, body {
+  background: #ffffff;
+  color: #171717;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-inter);
+  font-feature-settings: "cv11", "ss01";
+}
+
+/* Hide scrollbar only for the logo marquee */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: marquee 40s linear infinite;
+}
+.marquee-wrap:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Figma "magic" gradient for highlighted tier-value text */
+.text-gradient-magic {
+  background: radial-gradient(
+    circle at 30% 50%,
+    #ffba72 0%,
+    #ffa156 8%,
+    #ff8839 16%,
+    #ff6e1d 24%,
+    #ff620e 28%,
+    #ff5500 32%,
+    #fa520f 37%,
+    #f5501d 43%,
+    #eb4b3b 54%,
+    #e14558 66%,
+    #d74075 77%,
+    #c13098 83%,
+    #ab20ba 88%,
+    #9510dd 94%,
+    #7f00ff 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
