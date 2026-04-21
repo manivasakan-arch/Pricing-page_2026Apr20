@@ -26,7 +26,7 @@ const TESTIMONIALS = [
 
 export function Testimonials() {
   return (
-    <div className="flex flex-col items-stretch justify-center gap-3 md:flex-row md:items-center md:gap-5">
+    <div className="flex flex-col items-stretch justify-center gap-3 md:flex-row md:items-stretch md:gap-5">
       {TESTIMONIALS.map((t) => (
         <figure
           key={t.key}
