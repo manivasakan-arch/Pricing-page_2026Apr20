@@ -26,14 +26,14 @@ const TESTIMONIALS = [
 
 export function Testimonials() {
   return (
-    <div className="flex items-center justify-center gap-5">
+    <div className="flex flex-col items-stretch justify-center gap-3 md:flex-row md:items-center md:gap-5">
       {TESTIMONIALS.map((t) => (
         <figure
           key={t.key}
-          className="flex w-[310px] shrink-0 flex-col items-start overflow-clip rounded-[12px] border border-[rgba(26,26,26,0.09)] bg-white p-5"
+          className="flex w-full shrink-0 flex-col items-start overflow-clip rounded-[12px] border border-[rgba(26,26,26,0.09)] bg-white p-5 md:w-[310px]"
         >
           <div className="flex w-full flex-col items-start gap-[30px]">
-            <blockquote className="w-[270px] text-[16px] italic leading-[1.5] text-ink-primary">
+            <blockquote className="w-full text-[16px] italic leading-[1.5] text-ink-primary md:w-[270px]">
               {`\u201C${t.quote}\u201D`}
             </blockquote>
             <figcaption className="flex w-full items-center gap-[10px]">

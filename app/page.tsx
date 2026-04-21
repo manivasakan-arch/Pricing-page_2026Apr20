@@ -33,11 +33,11 @@ export default function PricingPage() {
         <Testimonials />
       </section>
 
-      <section className="sticky top-0 z-30 mt-16 -mx-6 bg-white/85 px-6 backdrop-blur-md backdrop-saturate-150">
+      <section className="sticky top-0 z-30 mt-16 -mx-6 hidden bg-white/85 px-6 backdrop-blur-md backdrop-saturate-150 md:block">
         <PriceSummary />
       </section>
 
-      <section className="mt-10">
+      <section className="mt-10 hidden md:block">
         <ComparisonTable />
       </section>
 
