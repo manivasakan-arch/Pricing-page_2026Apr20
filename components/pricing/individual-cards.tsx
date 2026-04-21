@@ -119,8 +119,8 @@ export function IndividualCards() {
 
           {/* POPULAR badge */}
           <div
-            className="absolute right-[22px] top-[22px] flex items-center justify-end gap-1 rounded-l-[12px] py-1 pl-[6px] pr-[12px]"
-            style={{ backgroundImage: "linear-gradient(to right, #ffd1ba, #ffffff)" }}
+            className="absolute left-[22px] top-[22px] inline-flex items-center gap-1 rounded-full py-1 pl-[6px] pr-[10px]"
+            style={{ backgroundImage: "linear-gradient(to right, #ffd1ba, #ffe9db)" }}
           >
             <img src={A.coinIconSmall} alt="" className="h-3 w-3 object-contain" />
             <p className="text-[10px] font-medium uppercase leading-none tracking-[0.5px] text-brand">Popular</p>

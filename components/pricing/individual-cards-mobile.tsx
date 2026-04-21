@@ -130,17 +130,15 @@ export function IndividualCardsMobile() {
       <CardShell highlighted>
         <div className="mb-4 flex w-full items-end justify-between gap-3">
           <div className="flex flex-col items-start">
+            <span
+              className="mb-3 inline-flex items-center gap-1 rounded-full py-1 pl-[6px] pr-[10px]"
+              style={{ backgroundImage: "linear-gradient(to right, #ffd1ba, #ffe9db)" }}
+            >
+              <img src={A.coinIconSmall} alt="" className="h-3 w-3 object-contain" />
+              <p className="text-[10px] font-medium uppercase leading-none tracking-[0.5px] text-brand">Popular</p>
+            </span>
             <img src={A.rocketIcon} alt="" className="h-[44px] w-[44px] object-contain" />
-            <div className="mt-3 flex items-center gap-2">
-              <p className="text-[24px] font-bold leading-none text-ink-primary">Pro</p>
-              <span
-                className="inline-flex items-center gap-1 rounded-full py-1 pl-[6px] pr-[10px]"
-                style={{ backgroundImage: "linear-gradient(to right, #ffd1ba, #ffe9db)" }}
-              >
-                <img src={A.coinIconSmall} alt="" className="h-3 w-3 object-contain" />
-                <p className="text-[10px] font-medium uppercase leading-none tracking-[0.5px] text-brand">Popular</p>
-              </span>
-            </div>
+            <p className="mt-3 text-[24px] font-bold leading-none text-ink-primary">Pro</p>
           </div>
           <div className="flex flex-col items-end">
             <p className="text-right text-[16px] font-medium leading-[20px] text-ink-tertiary line-through">₹750</p>

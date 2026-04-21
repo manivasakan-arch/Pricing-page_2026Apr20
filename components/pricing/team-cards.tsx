@@ -62,6 +62,13 @@ export function TeamCards() {
             backgroundImage: "linear-gradient(125deg, #ffffff 2.19%, #ffffff 41.38%, #ffeee5 98.14%)",
           }}
         >
+          <div
+            className="absolute left-[24px] top-[22px] inline-flex items-center gap-1 rounded-full py-1 pl-[6px] pr-[10px]"
+            style={{ backgroundImage: "linear-gradient(to right, #ffd1ba, #ffe9db)" }}
+          >
+            <img src={A.coinIconSmall} alt="" className="h-3 w-3 object-contain" />
+            <p className="text-[10px] font-medium uppercase leading-none tracking-[0.5px] text-brand">Popular</p>
+          </div>
           <div className="absolute left-[24px] top-[61px] h-[44px] w-[44px]">
             <img src={A.rocketIcon} alt="" className="h-full w-full object-contain" />
           </div>
