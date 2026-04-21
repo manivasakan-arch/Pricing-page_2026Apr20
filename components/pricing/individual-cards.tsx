@@ -72,12 +72,13 @@ export function IndividualCards() {
         {/* Basic card */}
         <div className="absolute left-0 top-[21px] z-10 h-[495px] w-[318px] rounded-l-[24px] border border-line-primary bg-white">
           <div className="absolute left-[24px] top-[44px] h-[44px] w-[44px] overflow-visible">
-            <img src={A.cessnaPlaneIcon} alt="" className="h-full w-full object-contain" style={{ transform: "rotate(2.22deg)" }} />
+            <img src="/basic-plane-icon.png" alt="" className="h-full w-full object-contain" />
           </div>
           <p className="absolute left-[24px] top-[100px] text-[24px] font-bold leading-none text-ink-primary">Basic</p>
           <div className="absolute right-[24px] top-[80px] flex flex-col items-end">
+            <p className="text-right text-[16px] font-medium leading-[20px] text-ink-primary line-through opacity-0">₹1,111</p>
             <p className="text-right leading-none">
-              <span className="text-[28px] font-bold text-ink-primary">₹374</span>
+              <span className="text-[24px] font-bold text-ink-primary">₹374</span>
               <span className="text-[14px] leading-[1.43] text-ink-tertiary">/mo</span>
             </p>
             <p className="text-right text-[14px] leading-[1.43] text-ink-tertiary">billed yearly</p>
@@ -129,7 +130,7 @@ export function IndividualCards() {
           <div className="absolute right-[22px] top-[101px] flex flex-col items-end">
             <p className="text-right text-[16px] font-medium leading-[20px] text-ink-primary line-through">₹750</p>
             <p className="text-right leading-none">
-              <span className="text-[28px] font-bold text-ink-primary">₹675</span>
+              <span className="text-[24px] font-bold text-ink-primary">₹675</span>
               <span className="text-[14px] leading-[1.43] text-ink-tertiary">/mo</span>
             </p>
             <p className="text-right text-[14px] leading-[1.43] text-ink-tertiary">billed yearly</p>
@@ -195,7 +196,7 @@ export function IndividualCards() {
                 transition={{ duration: 0.2 }}
                 className="text-right leading-none"
               >
-                <span className="text-[28px] font-bold text-ink-primary">{yearly ? "₹8,975" : "₹17,950"}</span>
+                <span className="text-[24px] font-bold text-ink-primary">{yearly ? "₹8,975" : "₹17,950"}</span>
                 <span className="text-[14px] leading-[1.43] text-ink-tertiary">/mo</span>
               </motion.p>
             </AnimatePresence>
