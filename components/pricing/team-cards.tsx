@@ -62,10 +62,10 @@ export function TeamCards() {
             backgroundImage: "linear-gradient(125deg, #ffffff 2.19%, #ffffff 41.38%, #ffeee5 98.14%)",
           }}
         >
-          <div className="absolute left-[24px] top-[47px] h-[44px] w-[44px]">
+          <div className="absolute left-[24px] top-[61px] h-[44px] w-[44px]">
             <img src={A.rocketIcon} alt="" className="h-full w-full object-contain" />
           </div>
-          <p className="absolute left-[24px] top-[113px] text-[24px] font-bold leading-none text-ink-primary">Pro</p>
+          <p className="absolute left-[24px] top-[117px] text-[24px] font-bold leading-none text-ink-primary">Pro</p>
           <div className="absolute right-[24px] top-[88px] flex flex-col items-end">
             <p className="text-right text-[16px] font-medium leading-[20px] text-ink-tertiary line-through">₹1,500</p>
             <p className="text-right leading-none">

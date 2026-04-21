@@ -35,8 +35,15 @@ export function UserSelect({
         onClick={() => setOpen((o) => !o)}
         className="flex w-full items-center justify-between rounded-md border border-line-primary bg-white px-3 py-2 text-sm font-medium text-ink-primary transition hover:border-ink-secondary"
       >
-        <span>
-          {value} {value === 1 ? "user" : "users"}
+        <span className="flex items-center gap-2">
+          <span>
+            {value} {value === 1 ? "user" : "users"}
+          </span>
+          {showDiscount && value >= DISCOUNT_THRESHOLD && (
+            <span className="inline-flex h-[20px] items-center rounded-[6px] bg-success px-[8px] text-[11px] font-medium leading-none text-white">
+              20% Off
+            </span>
+          )}
         </span>
         <ChevronDown
           className={clsx("h-4 w-4 text-ink-secondary transition", open && "rotate-180")}
