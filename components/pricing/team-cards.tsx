@@ -42,7 +42,7 @@ export function TeamCards() {
   const [goldSeats, setGoldSeats] = useState(2);
 
   return (
-    <div className="mx-auto w-full max-w-[978px]">
+    <div className="mx-auto w-full max-w-[954px]">
       <div className="relative h-[638px] w-full">
         {/* Pro (highlighted) */}
         <div
@@ -129,20 +129,20 @@ export function TeamCards() {
         </div>
 
         {/* Enterprise */}
-        <div className="absolute left-[636px] top-[21px] h-[597px] w-[342px] rounded-r-[24px] border border-line-primary bg-white">
-          <div className="absolute left-[70px] top-[35px] flex h-[44px] w-[44px] items-center justify-center overflow-hidden">
+        <div className="absolute left-[612px] top-[21px] h-[597px] w-[342px] rounded-r-[24px] border border-line-primary bg-white">
+          <div className="absolute left-[55px] top-[35px] flex h-[44px] w-[44px] items-center justify-center overflow-hidden">
             <img src="/enterprise-icon.png" alt="" className="h-[49.5px] w-[49.5px] object-contain" />
           </div>
-          <p className="absolute left-[62px] top-[91px] text-[24px] font-bold leading-none text-ink-primary">Enterprise</p>
+          <p className="absolute left-[47px] top-[91px] text-[24px] font-bold leading-none text-ink-primary">Enterprise</p>
 
-          <div className="absolute left-[36px] top-[156px] flex w-[270px] flex-col items-center gap-[8px]">
+          <div className="absolute left-[48px] top-[156px] flex w-[270px] flex-col items-center gap-[8px]">
             <p className="text-center text-[12px] font-medium uppercase leading-none text-ink-secondary">Trusted by 1000+ Enterprises</p>
             <img src="/enterprise-logos.svg" alt="Google, Adobe, Notion" className="w-full h-auto object-contain" />
           </div>
 
           <button
             type="button"
-            className="absolute left-[36px] top-[227px] flex h-[48px] w-[270px] items-center justify-center rounded-[4px] border border-brand transition hover:bg-brand-50 active:bg-brand-100"
+            className="absolute left-[48px] top-[227px] flex h-[48px] w-[270px] items-center justify-center rounded-[4px] border border-brand transition hover:bg-brand-50 active:bg-brand-100"
           >
             <p className="text-[16px] font-bold leading-[16px] text-brand">Talk to Sales</p>
           </button>
