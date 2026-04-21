@@ -17,11 +17,7 @@ function CellRender({ cell }: { cell: Cell }) {
         </span>
       );
     case "check":
-      return (
-        <span className="inline-flex size-5 items-center justify-center rounded-full bg-success">
-          <Check className="size-[14px] text-white" strokeWidth={3} />
-        </span>
-      );
+      return <Check className="size-5 text-ink-primary" strokeWidth={1.5} />;
     case "text":
       if (cell.tone === "magic") {
         return (
@@ -87,11 +83,12 @@ export function ComparisonTable({ mode = "individual" }: { mode?: "individual" |
           <h3 className="w-full text-[24px] font-semibold leading-[1.3] tracking-[-0.24px] text-ink-primary">
             {section.title}
           </h3>
-          <div className="flex w-full items-stretch">
-            <div className="flex w-[340px] shrink-0 flex-col bg-gray-50">
-              {section.rows.map((row, ri) => (
-                <div key={row.label} className="flex flex-col">
-                  <div className="flex h-12 items-center gap-2 px-3">
+          <div className="flex w-full flex-col items-start gap-[2px]">
+            <div className="h-px w-full bg-line-secondary" />
+            {section.rows.map((row, ri) => (
+              <div key={row.label} className="flex w-full flex-col items-start gap-[2px]">
+                <div className="flex h-12 w-full items-center gap-[2px] py-2">
+                  <div className="flex w-[192px] shrink-0 items-center gap-2">
                     <p className="whitespace-nowrap text-[14px] leading-[1.43] text-ink-primary">
                       {row.label}
                     </p>
@@ -105,39 +102,22 @@ export function ComparisonTable({ mode = "individual" }: { mode?: "individual" |
                     )}
                     {row.badge && <Badge>{row.badge}</Badge>}
                   </div>
-                  {ri < section.rows.length - 1 && (
-                    <div className="h-px w-full bg-line-secondary" />
-                  )}
+                  <div className="flex w-[266px] shrink-0 items-center justify-center">
+                    <CellRender cell={mode === "team" ? (row.free ?? DASH) : row.basic} />
+                  </div>
+                  <div className="flex w-[266px] shrink-0 items-center justify-center">
+                    <CellRender cell={row.pro} />
+                  </div>
+                  <div className="flex w-[266px] shrink-0 items-center justify-center">
+                    <CellRender cell={row.gold} />
+                  </div>
                 </div>
-              ))}
-            </div>
-            {(["basic", "pro", "gold"] as const).map((key) => (
-              <div
-                key={key}
-                className="flex w-[220px] shrink-0 flex-col border-l border-line-secondary"
-              >
-                {section.rows.map((row, ri) => {
-                  const cell =
-                    key === "basic"
-                      ? mode === "team"
-                        ? (row.free ?? DASH)
-                        : row.basic
-                      : key === "pro"
-                        ? row.pro
-                        : row.gold;
-                  return (
-                    <div key={row.label} className="flex flex-col">
-                      <div className="flex h-12 items-center justify-center">
-                        <CellRender cell={cell} />
-                      </div>
-                      {ri < section.rows.length - 1 && (
-                        <div className="h-px w-full bg-line-secondary" />
-                      )}
-                    </div>
-                  );
-                })}
+                {ri < section.rows.length - 1 && (
+                  <div className="h-px w-full bg-line-secondary" />
+                )}
               </div>
             ))}
+            <div className="h-px w-full bg-line-secondary" />
           </div>
         </motion.section>
       ))}

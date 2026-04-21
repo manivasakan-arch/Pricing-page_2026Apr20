@@ -1,6 +1,18 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import clsx from "clsx";
+
+function Countdown() {
+  const [s, setS] = useState(2839);
+  useEffect(() => {
+    const id = setInterval(() => setS((x) => (x > 0 ? x - 1 : 2839)), 1000);
+    return () => clearInterval(id);
+  }, []);
+  const mm = String(Math.floor(s / 60)).padStart(2, "0");
+  const ss = String(s % 60).padStart(2, "0");
+  return <span className="text-[#171717] tabular-nums">{mm}:{ss}</span>;
+}
 
 function BuyTooltip({ text }: { text: string }) {
   return (
@@ -32,7 +44,7 @@ const INDIVIDUAL_TIERS: Tier[] = [
     price: "₹374",
     priceSuffix: "/mo",
     subnote: "billed yearly",
-    cta: "Buy Basic",
+    cta: "Get Basic Plan",
     ctaVariant: "outline",
     tooltip: "For those who want to make simple decks occasionally",
   },
@@ -43,7 +55,7 @@ const INDIVIDUAL_TIERS: Tier[] = [
     price: "₹675",
     priceSuffix: "/mo",
     subnote: "billed yearly",
-    cta: "Buy Pro",
+    cta: "Get Pro Plan",
     ctaVariant: "primary",
     withTimer: true,
     tooltip: "For those who want AI to craft polished, on-brand decks regularly",
@@ -55,7 +67,7 @@ const INDIVIDUAL_TIERS: Tier[] = [
     price: "₹8,975",
     priceSuffix: "/mo",
     subnote: "billed yearly",
-    cta: "Buy Gold",
+    cta: "Get Gold Plan",
     ctaVariant: "outline",
     tooltip: "For those who want the best AI models to lead mission-critical decks",
   },
@@ -77,7 +89,7 @@ const TEAM_TIERS: Tier[] = [
     price: "₹1,350",
     priceSuffix: "/user/mo",
     subnote: "billed yearly",
-    cta: "Buy Pro",
+    cta: "Get Pro Plan",
     ctaVariant: "primary",
     withTimer: true,
     tooltip: "For teams that want AI to craft polished, on-brand decks together",
@@ -89,7 +101,7 @@ const TEAM_TIERS: Tier[] = [
     price: "₹17,950",
     priceSuffix: "/user/mo",
     subnote: "billed yearly",
-    cta: "Buy Gold",
+    cta: "Get Gold Plan",
     ctaVariant: "outline",
     tooltip: "For teams that need frontier AI models for mission-critical decks",
   },
@@ -101,27 +113,26 @@ export function PriceSummary({ mode = "individual" }: { mode?: "individual" | "t
     <div className="mx-auto flex w-full max-w-[1000px] flex-col items-start">
       <div className="flex w-full flex-col items-start gap-2">
         <div className="flex w-full items-center gap-[2px] py-3">
-          {/* Label column — section title aligned with comparison table labels */}
-          <div className="flex w-[340px] shrink-0 items-center self-stretch">
-            <p className="text-[28px] font-semibold leading-[1.3] tracking-[-0.24px] text-ink-primary">
-              Compare features
-              <br />
-              across all our plans
+          {/* Label column — invisible spacer, matches comparison table label width */}
+          <div className="invisible flex w-[192px] shrink-0 items-center gap-2">
+            <div className="size-5 shrink-0" />
+            <p className="flex-1 text-[14px] font-medium leading-none text-ink-primary">
+              AI models
             </p>
           </div>
 
           {TIERS.map((t) => (
             <div
               key={t.name}
-              className="flex w-[220px] shrink-0 flex-col items-center justify-center gap-2 self-stretch border-l border-line-secondary px-3"
+              className="flex w-[266px] shrink-0 flex-col items-center justify-center gap-4 px-3"
             >
-              <p className="whitespace-nowrap text-[16px] font-bold leading-[1.3] text-ink-primary">
-                {t.name}
-              </p>
-              <div className="flex w-full flex-col items-center justify-center gap-0.5">
+              <div className="flex w-full flex-col items-center justify-center gap-2">
+                <p className="whitespace-nowrap text-[20px] font-bold leading-[1.3] text-ink-primary">
+                  {t.name}
+                </p>
                 <p
                   className={clsx(
-                    "text-[12px] font-medium leading-[1.33] text-success",
+                    "text-[14px] font-medium leading-[1.43] text-success",
                     !t.saveText && "invisible",
                   )}
                 >
@@ -129,39 +140,54 @@ export function PriceSummary({ mode = "individual" }: { mode?: "individual" | "t
                 </p>
                 <div className="flex items-baseline justify-center gap-1">
                   {t.strike && (
-                    <span className="text-[12px] font-medium leading-[1.33] text-ink-tertiary line-through">
+                    <span className="text-[14px] font-medium leading-[1.43] text-ink-tertiary line-through">
                       {t.strike}
                     </span>
                   )}
-                  <span className="text-[20px] font-bold leading-[1.2] tracking-[-0.24px] text-ink-primary">
+                  <span className="text-[24px] font-bold leading-[1.3] tracking-[-0.24px] text-ink-primary">
                     {t.price}
                   </span>
                   {t.priceSuffix && (
-                    <span className="text-[12px] leading-none text-ink-secondary">
+                    <span className="text-[14px] leading-none text-ink-secondary">
                       {t.priceSuffix}
                     </span>
                   )}
                 </div>
-                <p className="text-center text-[11px] leading-[1.3] text-ink-tertiary">
+                <p className="text-center text-[12px] leading-[1.33] text-ink-tertiary">
                   {t.subnote}
                 </p>
               </div>
 
               <div className="group/buy relative w-full">
-                <button
-                  type="button"
-                  className={clsx(
-                    "relative flex h-9 w-full items-center justify-center overflow-clip rounded-[4px] text-[14px] font-semibold leading-[14px] transition",
-                    t.ctaVariant === "muted" &&
-                      "border border-[#0a0a0a] text-ink-primary opacity-40 shadow-[0_0_0_1px_rgba(26,26,26,0.06),0_1px_2px_0_rgba(26,26,26,0.09)]",
-                    t.ctaVariant === "primary" &&
-                      "bg-brand text-white shadow-[0_0_0_1px_rgba(26,26,26,0.06),0_1px_2px_0_rgba(26,26,26,0.09)] hover:brightness-110",
-                    t.ctaVariant === "outline" &&
-                      "border border-brand text-brand shadow-[0_0_0_1px_rgba(26,26,26,0.06),0_1px_2px_0_rgba(26,26,26,0.09)] hover:bg-brand-50",
-                  )}
-                >
-                  {t.cta}
-                </button>
+              <button
+                type="button"
+                className={clsx(
+                  "relative flex h-[48px] w-full items-center justify-center overflow-clip rounded-[4px] text-[16px] font-bold leading-[16px] transition",
+                  t.ctaVariant === "muted" &&
+                    "border border-[#0a0a0a] text-ink-primary opacity-40 shadow-[0_0_0_1px_rgba(26,26,26,0.06),0_1px_2px_0_rgba(26,26,26,0.09)]",
+                  t.ctaVariant === "primary" &&
+                    "bg-brand text-white shadow-[0_0_0_1px_rgba(26,26,26,0.06),0_1px_2px_0_rgba(26,26,26,0.09)] hover:brightness-110",
+                  t.ctaVariant === "outline" &&
+                    "border border-brand text-brand shadow-[0_0_0_1px_rgba(26,26,26,0.06),0_1px_2px_0_rgba(26,26,26,0.09)] hover:bg-brand-50",
+                )}
+              >
+                {t.withTimer ? (
+                  <>
+                    <p className="absolute left-[16px] top-1/2 -translate-y-1/2">
+                      {t.cta}
+                    </p>
+                    <div className="absolute right-[6px] top-1/2 flex -translate-y-1/2 items-center justify-center rounded-[2px] bg-white px-[8px] py-[3px]">
+                      <p className="text-center text-[11px] leading-[1.3]">
+                        <span className="font-medium text-brand">SAVE 10%</span>
+                        <br aria-hidden />
+                        <span className="text-ink-tertiary">FOR</span> <Countdown />
+                      </p>
+                    </div>
+                  </>
+                ) : (
+                  t.cta
+                )}
+              </button>
                 <BuyTooltip text={t.tooltip} />
               </div>
             </div>

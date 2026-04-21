@@ -6,17 +6,17 @@ import { PricingHeader } from "@/components/pricing/header";
 import type { PlanMode } from "@/components/pricing/plan-toggle";
 import { TierGrid } from "@/components/pricing/tier-grid";
 import { Testimonials } from "@/components/pricing/testimonials";
-import { PriceSummary } from "@/components/pricing/price-summary";
-import { ComparisonTable } from "@/components/pricing/comparison-table";
+import { PriceSummary } from "@/components/pricing/price-summary-v1";
+import { ComparisonTable } from "@/components/pricing/comparison-table-v1";
 import { ComplianceFooter } from "@/components/pricing/compliance-footer";
 import { VersionToggle } from "@/components/pricing/version-toggle";
 
-export default function PricingPage() {
+export default function PricingPageV1() {
   const [mode, setMode] = useState<PlanMode>("individual");
 
   return (
     <div className="relative mx-auto w-full max-w-[1280px] px-[10px] pt-8 md:px-6 md:pt-12">
-      <VersionToggle active="v2" />
+      <VersionToggle active="v1" />
       <button
         type="button"
         aria-label="Close"
