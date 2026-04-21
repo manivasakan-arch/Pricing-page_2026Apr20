@@ -13,9 +13,9 @@ export function PricingHeader({
 }) {
   const next: PlanMode = mode === "individual" ? "team" : "individual";
   return (
-    <header className="mx-auto flex max-w-3xl flex-col items-center pt-0 text-center">
-      <h1 className="text-[24px] font-medium leading-[1.3] tracking-[-0.01em] text-ink-primary">
-        Pick a plan that grows with you
+    <header className="mx-auto flex max-w-3xl flex-col items-center pt-6 text-center">
+      <h1 className="text-[24px] font-normal leading-[1.3] tracking-[-0.01em] text-ink-primary">
+        Upgrade and get the most out of Presentations.ai
       </h1>
       <button
         type="button"
