@@ -67,29 +67,10 @@ function Countdown() {
 export function IndividualCards() {
   const [yearly, setYearly] = useState(true);
   return (
-    <div className="mx-auto w-full max-w-[1128px]">
+    <div className="mx-auto w-full max-w-[864px]">
       <div className="relative h-[612px] w-full">
-        {/* Free card */}
-        <div
-          className="absolute left-0 top-[21px] z-20 h-[551px] w-[312px] rounded-[24px] border border-line-primary bg-white"
-        >
-          <div className="absolute left-[23px] top-[23px] h-[60px] w-[60px]">
-            <img src={A.paperPlaneIcon} alt="" className="h-full w-full object-contain" style={{ transform: "rotate(1.23deg)" }} />
-          </div>
-          <p className="absolute left-[23px] top-[91px] text-[24px] font-bold leading-none text-ink-primary">Free</p>
-          <div className="absolute left-[23px] top-[172px] flex h-[60px] w-[216px] items-center justify-center rounded-[4px] border border-line-tertiary">
-            <p className="text-[16px] font-bold leading-[16px] text-ink-tertiary">Your current plan</p>
-          </div>
-          <div className="absolute left-[23px] top-[278px] flex w-[216px] flex-col gap-4 items-start">
-            <Row iconSrc={A.coinIcon} text={<><span className="font-medium text-ink-primary">XXX </span><span>credits</span></>} />
-            <Row iconSrc={A.presentationChart} text="40 slides" />
-            <Row iconSrc={A.starFour} text="Basic AI models and agents" />
-            <Row iconSrc={A.filePpt} text="Export to PowerPoint & Google Slides" />
-          </div>
-        </div>
-
         {/* Basic card */}
-        <div className="absolute left-[264px] top-[21px] z-10 h-[551px] w-[288px] rounded-r-[24px] border border-line-primary bg-white">
+        <div className="absolute left-0 top-[21px] z-10 h-[551px] w-[288px] rounded-l-[24px] border border-line-primary bg-white">
           <div className="absolute left-[23px] top-[23px] h-[60px] w-[60px] overflow-visible">
             <img src={A.cessnaPlaneIcon} alt="" className="h-full w-full object-contain" style={{ transform: "rotate(2.22deg)" }} />
           </div>
@@ -124,7 +105,7 @@ export function IndividualCards() {
 
         {/* Pro card (highlighted, taller, floats above) */}
         <div
-          className="absolute left-[552px] top-0 z-30 h-[592px] w-[288px] overflow-visible rounded-[24px] border-2 border-brand-border shadow-[0px_1px_2px_0px_rgba(0,0,0,0.08),0px_4px_10px_0px_rgba(0,0,0,0.06)]"
+          className="absolute left-[288px] top-0 z-30 h-[592px] w-[288px] overflow-visible rounded-[24px] border-2 border-brand-border shadow-[0px_1px_2px_0px_rgba(0,0,0,0.08),0px_4px_10px_0px_rgba(0,0,0,0.06)]"
           style={{
             backgroundImage:
               "linear-gradient(127.06deg, #ffffff 2.19%, #ffffff 41.38%, #ffeee5 98.14%)",
@@ -193,7 +174,7 @@ export function IndividualCards() {
         </div>
 
         {/* Gold card */}
-        <div className="absolute left-[840px] top-[21px] z-20 h-[551px] w-[288px] rounded-[24px] border border-line-primary bg-white">
+        <div className="absolute left-[576px] top-[21px] z-20 h-[551px] w-[288px] rounded-r-[24px] border border-line-primary bg-white">
           <div className="absolute left-[23px] top-[27px] flex items-center p-[4.5px]">
             <img src={A.spaceshipIcon} alt="" className="h-[51px] w-[51px] object-contain" />
           </div>
