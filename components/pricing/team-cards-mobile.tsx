@@ -118,7 +118,7 @@ export function TeamCardsMobile() {
         </div>
         <div className="mt-4 flex flex-col gap-4 items-start">
           <Row iconSrc={A.coinIcon} text={<><span className="text-ink-secondary">X,XXX </span><span>credits</span></>} />
-          <p className="w-full text-[14px] font-medium leading-[1.43] text-ink-primary">All Basic features plus the following</p>
+          <p className="w-full text-[14px] font-medium leading-[1.43] text-ink-primary">All Free features plus the following</p>
           <Row iconSrc={A.starFour} text="Advanced AI models and agents" />
           <Row iconSrc={A.filePpt} text="Export to PowerPoint and Google Slides" />
           <Row iconSrc={A.chartBar} text="Presentation tracking & analytics" />

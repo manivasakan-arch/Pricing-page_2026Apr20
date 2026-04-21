@@ -40,7 +40,7 @@ export default function PricingPage() {
       </section>
 
       <section className="sticky top-0 z-30 mt-[52px] -mx-6 hidden bg-white/85 px-6 backdrop-blur-md backdrop-saturate-150 md:block">
-        <PriceSummary />
+        <PriceSummary mode={mode} />
       </section>
 
       <section className="mt-10 hidden md:block">

@@ -38,7 +38,7 @@ type Tier = {
   tooltip: string;
 };
 
-const TIERS: Tier[] = [
+const INDIVIDUAL_TIERS: Tier[] = [
   {
     name: "Basic",
     price: "₹374",
@@ -73,7 +73,43 @@ const TIERS: Tier[] = [
   },
 ];
 
-export function PriceSummary() {
+const TEAM_TIERS: Tier[] = [
+  {
+    name: "Free",
+    price: "₹0",
+    priceSuffix: "/user/mo",
+    subnote: "free forever",
+    cta: "Get Started Free",
+    ctaVariant: "outline",
+    tooltip: "For small teams getting started with AI presentations",
+  },
+  {
+    name: "Pro",
+    strike: "₹1,500",
+    saveText: "Save ₹1,800/user yearly",
+    price: "₹1,350",
+    priceSuffix: "/user/mo",
+    subnote: "billed yearly",
+    cta: "Get Pro Plan",
+    ctaVariant: "primary",
+    withTimer: true,
+    tooltip: "For teams that want AI to craft polished, on-brand decks together",
+  },
+  {
+    name: "Gold",
+    strike: "₹35,900",
+    saveText: "Save ₹215,400/user yearly",
+    price: "₹17,950",
+    priceSuffix: "/user/mo",
+    subnote: "billed yearly",
+    cta: "Get Gold Plan",
+    ctaVariant: "outline",
+    tooltip: "For teams that need frontier AI models for mission-critical decks",
+  },
+];
+
+export function PriceSummary({ mode = "individual" }: { mode?: "individual" | "team" }) {
+  const TIERS = mode === "team" ? TEAM_TIERS : INDIVIDUAL_TIERS;
   return (
     <div className="mx-auto flex w-full max-w-[1000px] flex-col items-start">
       <div className="flex w-full flex-col items-start gap-2">
