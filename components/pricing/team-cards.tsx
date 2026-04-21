@@ -70,7 +70,7 @@ export function TeamCards() {
             <p className="text-[10px] font-medium uppercase leading-none tracking-[0.5px] text-brand">Popular</p>
           </div>
           <div className="absolute left-[24px] top-[61px] h-[44px] w-[44px]">
-            <img src="/pro-jet-icon.png" alt="" className="h-full w-full object-contain" />
+            <img src="/pro-jet-icon.png" alt="" className="h-full w-full scale-125 object-contain" />
           </div>
           <p className="absolute left-[24px] top-[117px] text-[24px] font-bold leading-none text-ink-primary">Pro</p>
           <div className="absolute right-[24px] top-[88px] flex flex-col items-end">

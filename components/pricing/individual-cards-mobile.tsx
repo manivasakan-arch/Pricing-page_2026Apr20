@@ -137,7 +137,7 @@ export function IndividualCardsMobile() {
               <img src={A.coinIconSmall} alt="" className="h-3 w-3 object-contain" />
               <p className="text-[10px] font-medium uppercase leading-none tracking-[0.5px] text-brand">Popular</p>
             </span>
-            <img src="/pro-jet-icon.png" alt="" className="h-[44px] w-[44px] object-contain" />
+            <img src="/pro-jet-icon.png" alt="" className="h-[44px] w-[44px] scale-125 object-contain" />
             <p className="mt-3 text-[24px] font-bold leading-none text-ink-primary">Pro</p>
           </div>
           <div className="flex flex-col items-end">
