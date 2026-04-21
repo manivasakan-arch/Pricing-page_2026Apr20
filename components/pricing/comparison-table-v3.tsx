@@ -1,6 +1,6 @@
 "use client";
 
-import { Info, Check } from "lucide-react";
+import { Info, Check, Minus } from "lucide-react";
 import clsx from "clsx";
 import { motion } from "framer-motion";
 import { SECTIONS, type Cell } from "./comparison-data";
@@ -8,20 +8,9 @@ import { SECTIONS, type Cell } from "./comparison-data";
 function CellRender({ cell }: { cell: Cell }) {
   switch (cell.kind) {
     case "dash":
-      return (
-        <span
-          aria-hidden
-          className="relative inline-block size-5 opacity-50"
-        >
-          <span className="absolute inset-y-[46.25%] inset-x-1/4 rounded-full bg-ink-tertiary" />
-        </span>
-      );
+      return <Minus className="size-5 text-ink-tertiary" strokeWidth={2} />;
     case "check":
-      return (
-        <span className="inline-flex size-5 items-center justify-center rounded-full bg-success">
-          <Check className="size-[14px] text-white" strokeWidth={3} />
-        </span>
-      );
+      return <Check className="size-5 text-ink-primary" strokeWidth={2.5} />;
     case "text":
       if (cell.tone === "magic") {
         return (
@@ -64,7 +53,7 @@ function CellRender({ cell }: { cell: Cell }) {
 
 function Badge({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-surface-quaternary px-2 py-0.5 text-[12px] leading-[1.33] text-ink-primary">
+    <span className="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-surface-quaternary px-2 py-0.5 text-[11px] font-medium uppercase leading-[1.33] tracking-[0.4px] text-ink-secondary">
       {children}
     </span>
   );
@@ -72,31 +61,67 @@ function Badge({ children }: { children: React.ReactNode }) {
 
 const DASH: Cell = { kind: "dash" };
 
+const COL_LABEL = 340;
+const COL_TIER = 220;
+
 export function ComparisonTable({ mode = "individual" }: { mode?: "individual" | "team" }) {
   return (
-    <div className="mx-auto flex w-full max-w-[1000px] flex-col items-start gap-10">
-      {SECTIONS.map((section, si) => (
-        <motion.section
-          key={section.title}
-          initial={{ opacity: 0, y: 8 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.35, delay: si * 0.04, ease: "easeOut" }}
-          className="flex w-full flex-col items-start gap-3"
-        >
-          <h3 className="w-full text-[24px] font-semibold leading-[1.3] tracking-[-0.24px] text-ink-primary">
-            {section.title}
-          </h3>
-          <div className="flex w-full items-stretch">
-            <div className="flex w-[340px] shrink-0 flex-col bg-gray-50">
+    <div className="mx-auto w-full max-w-[1000px]">
+      <div className="relative w-full">
+        {/* Highlighted Pro column background — spans full table height */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute top-0 rounded-[12px] bg-[#fff7f2] ring-1 ring-[#ffd9c2]"
+          style={{
+            left: COL_LABEL + COL_TIER,
+            width: COL_TIER,
+            bottom: 0,
+          }}
+        />
+
+        <div className="relative flex w-full flex-col">
+          {SECTIONS.map((section, si) => (
+            <motion.section
+              key={section.title}
+              initial={{ opacity: 0, y: 8 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.3, delay: si * 0.03, ease: "easeOut" }}
+              className="flex w-full flex-col"
+            >
+              {/* Section title row */}
+              <div className="flex w-full items-center border-b border-ink-primary pb-3 pt-8">
+                <h3
+                  className="shrink-0 text-[18px] font-bold leading-[1.3] tracking-[-0.01em] text-ink-primary"
+                  style={{ width: COL_LABEL }}
+                >
+                  {section.title}
+                </h3>
+              </div>
+
+              {/* Rows */}
               {section.rows.map((row, ri) => (
-                <div key={row.label} className="flex flex-col">
-                  <div className="flex h-12 items-center gap-2 px-3">
-                    <p className="whitespace-nowrap text-[14px] leading-[1.43] text-ink-primary">
+                <div
+                  key={row.label}
+                  className={clsx(
+                    "flex w-full items-center",
+                    ri < section.rows.length - 1 &&
+                      "border-b border-line-secondary",
+                  )}
+                >
+                  {/* Label */}
+                  <div
+                    className="flex h-14 shrink-0 items-center gap-2 pr-4"
+                    style={{ width: COL_LABEL }}
+                  >
+                    <p className="text-[14px] leading-[1.43] text-ink-primary">
                       {row.label}
                     </p>
                     {row.info && (
-                      <span title={row.info} className="inline-flex size-5 shrink-0 items-center justify-center">
+                      <span
+                        title={row.info}
+                        className="inline-flex size-5 shrink-0 items-center justify-center"
+                      >
                         <Info
                           className="size-[15px] text-ink-tertiary"
                           strokeWidth={1.75}
@@ -105,42 +130,40 @@ export function ComparisonTable({ mode = "individual" }: { mode?: "individual" |
                     )}
                     {row.badge && <Badge>{row.badge}</Badge>}
                   </div>
-                  {ri < section.rows.length - 1 && (
-                    <div className="h-px w-full bg-line-secondary" />
-                  )}
+
+                  {/* Basic / Free */}
+                  <div
+                    className="flex h-14 shrink-0 items-center justify-center"
+                    style={{ width: COL_TIER }}
+                  >
+                    <CellRender
+                      cell={
+                        mode === "team" ? (row.free ?? DASH) : row.basic
+                      }
+                    />
+                  </div>
+
+                  {/* Pro (highlighted) */}
+                  <div
+                    className="flex h-14 shrink-0 items-center justify-center"
+                    style={{ width: COL_TIER }}
+                  >
+                    <CellRender cell={row.pro} />
+                  </div>
+
+                  {/* Gold */}
+                  <div
+                    className="flex h-14 shrink-0 items-center justify-center"
+                    style={{ width: COL_TIER }}
+                  >
+                    <CellRender cell={row.gold} />
+                  </div>
                 </div>
               ))}
-            </div>
-            {(["basic", "pro", "gold"] as const).map((key) => (
-              <div
-                key={key}
-                className="flex w-[220px] shrink-0 flex-col border-l border-line-secondary"
-              >
-                {section.rows.map((row, ri) => {
-                  const cell =
-                    key === "basic"
-                      ? mode === "team"
-                        ? (row.free ?? DASH)
-                        : row.basic
-                      : key === "pro"
-                        ? row.pro
-                        : row.gold;
-                  return (
-                    <div key={row.label} className="flex flex-col">
-                      <div className="flex h-12 items-center justify-center">
-                        <CellRender cell={cell} />
-                      </div>
-                      {ri < section.rows.length - 1 && (
-                        <div className="h-px w-full bg-line-secondary" />
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
-            ))}
-          </div>
-        </motion.section>
-      ))}
+            </motion.section>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
