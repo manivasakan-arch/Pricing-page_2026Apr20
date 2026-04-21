@@ -49,18 +49,16 @@ export function UserSelect({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -4, scale: 0.98 }}
             transition={{ duration: 0.14, ease: "easeOut" }}
-            className="absolute left-0 right-0 top-full z-20 mt-1 max-h-64 overflow-auto rounded-[16px] border border-line-secondary bg-white py-[12px] shadow-[0px_0px_0px_1px_rgba(26,26,26,0.06),0px_1px_2px_0px_rgba(26,26,26,0.06),0px_4px_6px_0px_rgba(26,26,26,0.06),0px_24px_40px_0px_rgba(26,26,26,0.06)]"
+            className="absolute left-0 right-0 top-full z-20 mt-1 flex flex-col gap-[4px] overflow-hidden rounded-[16px] bg-white p-[12px] shadow-[0px_0px_0px_1px_rgba(26,26,26,0.06),0px_1px_2px_0px_rgba(26,26,26,0.06),0px_4px_6px_0px_rgba(26,26,26,0.06),0px_24px_40px_0px_rgba(26,26,26,0.06),0px_40px_40px_-24px_rgba(26,26,26,0.06),0px_56px_56px_-32px_rgba(26,26,26,0.09)]"
           >
             {OPTIONS.map((n) => (
-              <li key={n}>
+              <li key={n} className="flex flex-col gap-[4px]">
                 {showDiscount && n === DISCOUNT_THRESHOLD && (
                   <>
-                    <div className="mx-[8px] my-[4px] h-px bg-line-secondary" />
-                    <div className="px-[8px] pb-[4px]">
-                      <span className="inline-flex items-center rounded-[6px] bg-success px-[10px] py-[2px] text-[12px] leading-[1.33] text-white">
-                        20% Off
-                      </span>
-                    </div>
+                    <div className="h-px w-full bg-line-secondary" />
+                    <span className="inline-flex h-[24px] w-fit items-center justify-center rounded-[6px] bg-success px-[10px] py-[2px] text-[12px] leading-[1.33] text-white">
+                      20% Off
+                    </span>
                   </>
                 )}
                 <button
@@ -70,10 +68,8 @@ export function UserSelect({
                     setOpen(false);
                   }}
                   className={clsx(
-                    "flex w-full items-center justify-between px-[8px] py-[12px] h-[36px] text-[14px] leading-[1.43] transition",
-                    n === value
-                      ? "text-ink-primary"
-                      : "text-ink-primary hover:bg-surface-secondary",
+                    "flex h-[36px] w-full items-center justify-between rounded-[4px] px-[8px] py-[12px] text-[14px] leading-[1.43] text-ink-primary transition",
+                    "hover:bg-surface-secondary",
                   )}
                 >
                   <span>{n} {n === 1 ? "user" : "users"}</span>
