@@ -119,7 +119,7 @@ export function PriceSummary() {
               <button
                 type="button"
                 className={clsx(
-                  "relative flex h-9 w-full items-center justify-center overflow-clip rounded-[4px] px-5 text-[14px] font-medium leading-[1.43] transition",
+                  "relative flex h-[48px] w-full items-center justify-center overflow-clip rounded-[4px] text-[16px] font-bold leading-[16px] transition",
                   t.ctaVariant === "muted" &&
                     "border border-[#0a0a0a] text-ink-primary opacity-40 shadow-[0_0_0_1px_rgba(26,26,26,0.06),0_1px_2px_0_rgba(26,26,26,0.09)]",
                   t.ctaVariant === "primary" &&
@@ -128,15 +128,21 @@ export function PriceSummary() {
                     "border border-brand text-brand shadow-[0_0_0_1px_rgba(26,26,26,0.06),0_1px_2px_0_rgba(26,26,26,0.09)] hover:bg-brand-50",
                 )}
               >
-                {t.cta}
-                {t.withTimer && (
-                  <div className="absolute right-[4px] top-1/2 flex -translate-y-1/2 items-center justify-center rounded-[2px] bg-white px-[6px] py-[2px]">
-                    <p className="text-center text-[9px] leading-[1.2]">
-                      <span className="font-medium text-brand">SAVE 10%</span>
-                      <br aria-hidden />
-                      <span className="text-ink-tertiary">FOR</span> <Countdown />
+                {t.withTimer ? (
+                  <>
+                    <p className="absolute left-[16px] top-1/2 -translate-y-1/2">
+                      {t.cta}
                     </p>
-                  </div>
+                    <div className="absolute right-[6px] top-1/2 flex -translate-y-1/2 items-center justify-center rounded-[2px] bg-white px-[8px] py-[3px]">
+                      <p className="text-center text-[11px] leading-[1.3]">
+                        <span className="font-medium text-brand">SAVE 10%</span>
+                        <br aria-hidden />
+                        <span className="text-ink-tertiary">FOR</span> <Countdown />
+                      </p>
+                    </div>
+                  </>
+                ) : (
+                  t.cta
                 )}
               </button>
             </div>
