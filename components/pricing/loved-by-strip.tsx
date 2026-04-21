@@ -128,13 +128,13 @@ export function LovedByStrip() {
   return (
     <div className="flex w-full flex-col items-start pt-6">
       <div className="flex w-full flex-col items-center gap-8">
-        <div className="flex w-full items-center gap-4 pt-3">
-          <p className="shrink-0 whitespace-nowrap text-[14px] font-medium uppercase leading-none tracking-[0.28px] text-ink-secondary">
+        <div className="flex w-full flex-col items-center gap-3 pt-3 md:flex-row md:gap-4">
+          <p className="shrink-0 whitespace-nowrap text-center text-[14px] font-medium uppercase leading-none tracking-[0.28px] text-ink-secondary md:text-left">
             <span aria-hidden>{"\u2665\uFE0F "}</span>
             <span>Loved by 10M+ presenters at</span>
           </p>
 
-          <div className="marquee-wrap relative h-[56px] w-[695px] overflow-hidden">
+          <div className="marquee-wrap relative h-[56px] w-full max-w-[695px] overflow-hidden md:w-[695px]">
             <div className="marquee-track absolute left-0 top-0 flex h-[48px] w-max items-center gap-4">
               {[...BASE_LOGOS, ...BASE_LOGOS].map((spec, i) => (
                 <LogoCell key={`${spec.key}-${i}`} spec={spec} />
