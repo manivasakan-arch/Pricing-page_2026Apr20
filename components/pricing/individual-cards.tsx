@@ -71,7 +71,7 @@ export function IndividualCards() {
       <div className="relative h-[612px] w-full">
         {/* Free card */}
         <div
-          className="absolute left-0 top-[21px] z-0 h-[551px] w-[312px] rounded-l-[24px] border border-line-primary bg-white"
+          className="absolute left-0 top-[21px] z-20 h-[551px] w-[312px] rounded-[24px] border border-line-primary bg-white"
         >
           <div className="absolute left-[23px] top-[23px] h-[60px] w-[60px]">
             <img src={A.paperPlaneIcon} alt="" className="h-full w-full object-contain" style={{ transform: "rotate(1.23deg)" }} />
@@ -89,7 +89,7 @@ export function IndividualCards() {
         </div>
 
         {/* Basic card */}
-        <div className="absolute left-[264px] top-[21px] z-10 h-[551px] w-[288px] border border-line-primary bg-white">
+        <div className="absolute left-[264px] top-[21px] z-10 h-[551px] w-[288px] rounded-r-[24px] border border-line-primary bg-white">
           <div className="absolute left-[23px] top-[23px] h-[60px] w-[60px] overflow-visible">
             <img src={A.cessnaPlaneIcon} alt="" className="h-full w-full object-contain" style={{ transform: "rotate(2.22deg)" }} />
           </div>
@@ -193,7 +193,7 @@ export function IndividualCards() {
         </div>
 
         {/* Gold card */}
-        <div className="absolute left-[840px] top-[21px] z-20 h-[551px] w-[288px] rounded-r-[24px] border border-line-primary bg-white">
+        <div className="absolute left-[840px] top-[21px] z-20 h-[551px] w-[288px] rounded-[24px] border border-line-primary bg-white">
           <div className="absolute left-[23px] top-[27px] flex items-center p-[4.5px]">
             <img src={A.spaceshipIcon} alt="" className="h-[51px] w-[51px] object-contain" />
           </div>

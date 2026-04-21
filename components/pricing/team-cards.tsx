@@ -43,10 +43,10 @@ export function TeamCards() {
 
   return (
     <div className="mx-auto w-full max-w-[864px]">
-      <div className="relative h-[638px] w-full">
+      <div className="relative h-[698px] w-full">
         {/* Pro (highlighted) */}
         <div
-          className="absolute left-0 top-0 z-20 h-[638px] w-[288px] overflow-visible rounded-[24px] border-2 border-brand-border shadow-[0px_1px_2px_0px_rgba(0,0,0,0.08),0px_4px_10px_0px_rgba(0,0,0,0.06)]"
+          className="absolute left-0 top-0 z-20 h-[698px] w-[288px] overflow-visible rounded-[24px] border-2 border-brand-border shadow-[0px_1px_2px_0px_rgba(0,0,0,0.08),0px_4px_10px_0px_rgba(0,0,0,0.06)]"
           style={{
             backgroundImage: "linear-gradient(127.06deg, #ffffff 2.19%, #ffffff 41.38%, #ffeee5 98.14%)",
           }}
