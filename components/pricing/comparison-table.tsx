@@ -66,7 +66,9 @@ function Badge({ children }: { children: React.ReactNode }) {
   );
 }
 
-export function ComparisonTable() {
+const DASH: Cell = { kind: "dash" };
+
+export function ComparisonTable({ mode = "individual" }: { mode?: "individual" | "team" }) {
   return (
     <div className="mx-auto flex w-full max-w-[1000px] flex-col items-start gap-10">
       {SECTIONS.map((section, si) => (
@@ -101,7 +103,7 @@ export function ComparisonTable() {
                     {row.badge && <Badge>{row.badge}</Badge>}
                   </div>
                   <div className="flex w-[266px] shrink-0 items-center justify-center">
-                    <CellRender cell={row.basic} />
+                    <CellRender cell={mode === "team" ? (row.free ?? DASH) : row.basic} />
                   </div>
                   <div className="flex w-[266px] shrink-0 items-center justify-center">
                     <CellRender cell={row.pro} />

@@ -44,7 +44,7 @@ export default function PricingPage() {
       </section>
 
       <section className="mt-10 hidden md:block">
-        <ComparisonTable />
+        <ComparisonTable mode={mode} />
       </section>
 
       <section className="mt-16">

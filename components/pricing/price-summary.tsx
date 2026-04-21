@@ -75,13 +75,12 @@ const INDIVIDUAL_TIERS: Tier[] = [
 
 const TEAM_TIERS: Tier[] = [
   {
-    name: "Free",
-    price: "₹0",
-    priceSuffix: "/user/mo",
-    subnote: "free forever",
-    cta: "Get Started Free",
-    ctaVariant: "outline",
-    tooltip: "For small teams getting started with AI presentations",
+    name: "Free Starter",
+    price: "0",
+    subnote: "14-day trial only",
+    cta: "Current Plan",
+    ctaVariant: "muted",
+    tooltip: "Your current trial plan",
   },
   {
     name: "Pro",

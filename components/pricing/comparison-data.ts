@@ -9,6 +9,7 @@ export type Row = {
   info?: string;
   badge?: string;
   basic: Cell;
+  free?: Cell;
   pro: Cell;
   gold: Cell;
 };
@@ -30,6 +31,7 @@ export const SECTIONS: Section[] = [
       {
         label: "AI Credits (annual)",
         info: "Annual credits consumed by AI tasks",
+        free: text("100 (one-time)"),
         basic: text("1,500"),
         pro: text("5,000"),
         gold: text("50,000"),
@@ -37,6 +39,7 @@ export const SECTIONS: Section[] = [
       {
         label: "AI models",
         info: "Choose from basic to frontier AI models for smarter content, sharper designs, and better output quality.",
+        free: { kind: "iconText", icon: "/ai-tier/standard.svg", iconWidth: 20, value: "Starter" },
         basic: { kind: "iconText", icon: "/ai-tier/standard.svg", iconWidth: 30, value: "Standard" },
         pro: { kind: "iconText", icon: "/ai-tier/advanced.svg", iconWidth: 40, value: "Advanced" },
         gold: { kind: "iconText", icon: "/ai-tier/frontier.svg", iconWidth: 50, value: "Frontier Models", tone: "magic" },
@@ -44,6 +47,7 @@ export const SECTIONS: Section[] = [
       {
         label: "Generation Speed",
         info: "Controls how fast AI generates your slides. Higher tiers unlock faster generation for quicker turnarounds.",
+        free: text("Slow"),
         basic: text("Medium"),
         pro: text("Fast"),
         gold: text("Ultra", "magic"),
@@ -112,6 +116,7 @@ export const SECTIONS: Section[] = [
       {
         label: "Guests",
         info: "Invite external collaborators to view or edit specific projects without a full workspace seat.",
+        free: text("Limited Trial"),
         basic: text("Up to 5 guests"),
         pro: text("Up to 10 guests"),
         gold: text("Unlimited guests", "magic"),
