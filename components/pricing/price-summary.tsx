@@ -125,13 +125,10 @@ export function PriceSummary({ mode = "individual" }: { mode?: "individual" | "t
               key={t.name}
               className="flex w-[266px] shrink-0 flex-col items-center justify-center gap-4 px-3"
             >
-              <div className="flex w-full flex-col items-center justify-center gap-2">
-                <p className="whitespace-nowrap text-[20px] font-bold leading-[1.3] text-ink-primary">
-                  {t.name}
-                </p>
+              <div className="flex w-full flex-col items-center justify-center gap-1">
                 <p
                   className={clsx(
-                    "text-[14px] font-medium leading-[1.43] text-success",
+                    "text-[12px] font-medium leading-[1.33] text-success",
                     !t.saveText && "invisible",
                   )}
                 >
@@ -139,20 +136,20 @@ export function PriceSummary({ mode = "individual" }: { mode?: "individual" | "t
                 </p>
                 <div className="flex items-baseline justify-center gap-1">
                   {t.strike && (
-                    <span className="text-[14px] font-medium leading-[1.43] text-ink-tertiary line-through">
+                    <span className="text-[12px] font-medium leading-[1.33] text-ink-tertiary line-through">
                       {t.strike}
                     </span>
                   )}
-                  <span className="text-[24px] font-bold leading-[1.3] tracking-[-0.24px] text-ink-primary">
+                  <span className="text-[18px] font-bold leading-[1.3] tracking-[-0.18px] text-ink-primary">
                     {t.price}
                   </span>
                   {t.priceSuffix && (
-                    <span className="text-[14px] leading-none text-ink-secondary">
+                    <span className="text-[12px] leading-none text-ink-secondary">
                       {t.priceSuffix}
                     </span>
                   )}
                 </div>
-                <p className="text-center text-[12px] leading-[1.33] text-ink-tertiary">
+                <p className="text-center text-[11px] leading-[1.33] text-ink-tertiary">
                   {t.subnote}
                 </p>
               </div>
@@ -161,7 +158,7 @@ export function PriceSummary({ mode = "individual" }: { mode?: "individual" | "t
               <button
                 type="button"
                 className={clsx(
-                  "relative flex h-[48px] w-full items-center justify-center overflow-clip rounded-[4px] text-[16px] font-bold leading-[16px] transition",
+                  "relative flex h-9 w-full items-center justify-center overflow-clip rounded-[4px] text-[14px] font-semibold leading-[14px] transition",
                   t.ctaVariant === "muted" &&
                     "border border-[#0a0a0a] text-ink-primary opacity-40 shadow-[0_0_0_1px_rgba(26,26,26,0.06),0_1px_2px_0_rgba(26,26,26,0.09)]",
                   t.ctaVariant === "primary" &&
@@ -172,11 +169,11 @@ export function PriceSummary({ mode = "individual" }: { mode?: "individual" | "t
               >
                 {t.withTimer ? (
                   <>
-                    <p className="absolute left-[16px] top-1/2 -translate-y-1/2">
+                    <p className="absolute left-[12px] top-1/2 -translate-y-1/2">
                       {t.cta}
                     </p>
-                    <div className="absolute right-[6px] top-1/2 flex -translate-y-1/2 items-center justify-center rounded-[2px] bg-white px-[8px] py-[3px]">
-                      <p className="text-center text-[11px] leading-[1.3]">
+                    <div className="absolute right-[4px] top-1/2 flex -translate-y-1/2 items-center justify-center rounded-[2px] bg-white px-[6px] py-[2px]">
+                      <p className="text-center text-[9px] leading-[1.2]">
                         <span className="font-medium text-brand">SAVE 10%</span>
                         <br aria-hidden />
                         <span className="text-ink-tertiary">FOR</span> <Countdown />
