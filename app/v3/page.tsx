@@ -35,12 +35,11 @@ export default function PricingPageV3() {
         <Testimonials />
       </section>
 
-      <section className="sticky top-0 z-30 mt-[104px] -mx-6 hidden bg-white/85 px-6 backdrop-blur-md backdrop-saturate-150 md:block">
-        <PriceSummary mode={mode} />
-      </section>
-
-      <section className="mt-10 hidden md:block">
-        <ComparisonTable mode={mode} />
+      <section className="mt-[104px] hidden md:block">
+        <div className="mx-auto w-full max-w-[1000px] overflow-hidden rounded-[8px] border border-[#e5e5e5]">
+          <PriceSummary mode={mode} />
+          <ComparisonTable mode={mode} />
+        </div>
       </section>
 
       <section className="mt-16">
