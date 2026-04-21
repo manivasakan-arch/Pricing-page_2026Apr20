@@ -42,11 +42,11 @@ export function TeamCards() {
   const [goldSeats, setGoldSeats] = useState(2);
 
   return (
-    <div className="mx-auto w-full max-w-[864px]">
+    <div className="mx-auto w-full max-w-[978px]">
       <div className="relative h-[638px] w-full">
         {/* Pro (highlighted) */}
         <div
-          className="absolute left-0 top-0 z-20 h-[638px] w-[288px] overflow-visible rounded-[24px] border-2 border-brand-border shadow-[0px_1px_2px_0px_rgba(0,0,0,0.08),0px_4px_10px_0px_rgba(0,0,0,0.06)]"
+          className="absolute left-0 top-0 z-20 h-[638px] w-[318px] overflow-visible rounded-[24px] border-2 border-brand-border shadow-[0px_1px_2px_0px_rgba(0,0,0,0.08),0px_4px_10px_0px_rgba(0,0,0,0.06)]"
           style={{
             backgroundImage: "linear-gradient(125deg, #ffffff 2.19%, #ffffff 41.38%, #ffeee5 98.14%)",
           }}
@@ -63,18 +63,18 @@ export function TeamCards() {
             </p>
             <p className="text-right text-[14px] leading-[1.43] text-ink-tertiary">billed yearly</p>
           </div>
-          <div className="absolute left-[22px] top-[200px] w-[240px]">
+          <div className="absolute left-[24px] top-[200px] w-[270px]">
             <UserSelect value={proSeats} onChange={setProSeats} />
           </div>
           <button
             type="button"
-            className="group absolute left-[22px] top-[246px] h-[48px] w-[240px] overflow-hidden rounded-[4px] transition hover:shadow-[0_6px_14px_-4px_rgba(255,85,0,0.45)]"
+            className="group absolute left-[24px] top-[246px] h-[48px] w-[270px] overflow-hidden rounded-[4px] transition hover:shadow-[0_6px_14px_-4px_rgba(255,85,0,0.45)]"
             style={{ backgroundImage: "linear-gradient(to bottom, #ff732d, #ff5500)" }}
           >
             <span className="absolute inset-0 bg-black/0 transition group-hover:bg-black/10 group-active:bg-black/15" />
             <p className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[16px] font-bold leading-[16px] text-white">Buy Now</p>
           </button>
-          <div className="absolute left-[22px] top-[304px] flex w-[240px] items-center justify-center gap-2">
+          <div className="absolute left-[24px] top-[304px] flex w-[270px] items-center justify-center gap-2">
             <CheckCircle size={14} weight="fill" className="shrink-0 text-success" />
             <p className="text-[12px] leading-[1.33] text-success">
               {proSeats >= 5
@@ -82,7 +82,7 @@ export function TeamCards() {
                 : `Add ${5 - proSeats} more users to get 20% off`}
             </p>
           </div>
-          <div className="absolute left-1/2 top-[352px] flex w-[240px] -translate-x-1/2 flex-col gap-4 items-start">
+          <div className="absolute left-1/2 top-[352px] flex w-[270px] -translate-x-1/2 flex-col gap-4 items-start">
             <Row iconSrc={A.coinIcon} text={<><span className="text-ink-secondary">X,XXX </span><span>credits</span></>} />
             <p className="w-full text-[14px] font-medium leading-[1.43] text-ink-primary">All Basic features plus the following</p>
             <Row iconSrc={A.starFour} text="Advanced AI models and agents" />
@@ -93,7 +93,7 @@ export function TeamCards() {
         </div>
 
         {/* Gold */}
-        <div className="absolute left-[288px] top-[21px] z-10 h-[597px] w-[288px] rounded-r-[24px] border border-line-primary bg-white">
+        <div className="absolute left-[318px] top-[21px] z-10 h-[597px] w-[318px] rounded-r-[24px] border border-line-primary bg-white">
           <div className="absolute left-[24px] top-[40px] flex h-[44px] w-[44px] items-center justify-center">
             <img src={A.spaceshipIcon} alt="" className="h-[37.4px] w-[37.4px] object-contain" />
           </div>
@@ -106,20 +106,20 @@ export function TeamCards() {
             </p>
             <p className="text-right text-[14px] leading-[1.43] text-ink-tertiary">billed yearly</p>
           </div>
-          <div className="absolute left-[23px] top-[180px] w-[240px]">
+          <div className="absolute left-[24px] top-[180px] w-[270px]">
             <UserSelect value={goldSeats} onChange={setGoldSeats} showDiscount={false} />
           </div>
           <button
             type="button"
-            className="absolute left-[23px] top-[226px] flex h-[48px] w-[240px] items-center justify-center rounded-[4px] border border-brand transition hover:bg-brand-50 active:bg-brand-100"
+            className="absolute left-[24px] top-[226px] flex h-[48px] w-[270px] items-center justify-center rounded-[4px] border border-brand transition hover:bg-brand-50 active:bg-brand-100"
           >
             <p className="text-[16px] font-bold leading-[16px] text-brand">Buy Now</p>
           </button>
-          <div className="absolute left-[23px] top-[284px] flex w-[240px] items-center justify-center gap-2">
+          <div className="absolute left-[24px] top-[284px] flex w-[270px] items-center justify-center gap-2">
             <CheckCircle size={14} weight="fill" className="shrink-0 text-success" />
             <p className="text-[12px] leading-[1.33] text-success">{"You'll save ₹XX,XXX this year"}</p>
           </div>
-          <div className="absolute left-1/2 top-[332px] flex w-[240px] -translate-x-1/2 flex-col gap-4 items-start">
+          <div className="absolute left-1/2 top-[332px] flex w-[270px] -translate-x-1/2 flex-col gap-4 items-start">
             <Row iconSrc={A.coinIcon} text={<><span className="font-medium text-ink-primary">XX,XXX </span><span>credits</span></>} />
             <p className="w-full text-[14px] font-medium leading-[1.43] text-ink-primary">All Pro features plus the following:</p>
             <Row iconSrc={A.starFour} text="Frontier AI models and agents" />
@@ -129,20 +129,20 @@ export function TeamCards() {
         </div>
 
         {/* Enterprise */}
-        <div className="absolute left-[552px] top-[21px] h-[597px] w-[312px] rounded-r-[24px] border border-line-primary bg-white">
-          <div className="absolute left-[55px] top-[35px] flex h-[44px] w-[44px] items-center justify-center overflow-hidden">
+        <div className="absolute left-[636px] top-[21px] h-[597px] w-[342px] rounded-r-[24px] border border-line-primary bg-white">
+          <div className="absolute left-[70px] top-[35px] flex h-[44px] w-[44px] items-center justify-center overflow-hidden">
             <img src="/enterprise-icon.png" alt="" className="h-[49.5px] w-[49.5px] object-contain" />
           </div>
-          <p className="absolute left-[47px] top-[91px] text-[24px] font-bold leading-none text-ink-primary">Enterprise</p>
+          <p className="absolute left-[62px] top-[91px] text-[24px] font-bold leading-none text-ink-primary">Enterprise</p>
 
-          <div className="absolute left-[48px] top-[156px] flex w-[240px] flex-col items-center gap-[8px]">
+          <div className="absolute left-[36px] top-[156px] flex w-[270px] flex-col items-center gap-[8px]">
             <p className="text-center text-[12px] font-medium uppercase leading-none text-ink-secondary">Trusted by 1000+ Enterprises</p>
             <img src="/enterprise-logos.svg" alt="Google, Adobe, Notion" className="w-full h-auto object-contain" />
           </div>
 
           <button
             type="button"
-            className="absolute left-[48px] top-[227px] flex h-[48px] w-[240px] items-center justify-center rounded-[4px] border border-brand transition hover:bg-brand-50 active:bg-brand-100"
+            className="absolute left-[36px] top-[227px] flex h-[48px] w-[270px] items-center justify-center rounded-[4px] border border-brand transition hover:bg-brand-50 active:bg-brand-100"
           >
             <p className="text-[16px] font-bold leading-[16px] text-brand">Talk to Sales</p>
           </button>
