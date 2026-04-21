@@ -112,13 +112,13 @@ export function StickySocialProof() {
       transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
       className="fixed inset-x-0 bottom-0 z-40 border-t border-line-secondary bg-white/60 backdrop-blur-xl backdrop-saturate-150"
     >
-      <div className="mx-auto flex max-w-[1280px] items-center gap-6 px-6 py-4">
-        <p className="shrink-0 whitespace-nowrap text-[14px] font-medium uppercase leading-none tracking-[0.28px] text-ink-secondary">
+      <div className="mx-auto flex max-w-[1280px] flex-col items-center gap-2 px-[10px] py-3 md:flex-row md:gap-6 md:px-6 md:py-4">
+        <p className="shrink-0 whitespace-nowrap text-center text-[14px] font-medium uppercase leading-none tracking-[0.28px] text-ink-secondary md:text-left">
           <span aria-hidden>{"\u2665\uFE0F "}</span>
           <span>Loved by 10M+ presenters at</span>
         </p>
 
-        <div className="marquee-wrap relative h-[48px] flex-1 overflow-hidden">
+        <div className="marquee-wrap relative h-[48px] w-full overflow-hidden md:flex-1">
           <div className="marquee-track absolute left-0 top-0 flex h-[48px] w-max items-center gap-4">
             {[...LOGOS, ...LOGOS].map((spec, i) => (
               <LogoCell key={`${spec.key}-${i}`} spec={spec} />
