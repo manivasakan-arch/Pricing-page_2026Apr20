@@ -5,7 +5,7 @@ import { ChevronDown, Check } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import clsx from "clsx";
 
-const OPTIONS = Array.from({ length: 11 }, (_, i) => i + 1);
+const OPTIONS = [3, 5, 10, 25];
 const DISCOUNT_THRESHOLD = 5;
 
 export function UserSelect({

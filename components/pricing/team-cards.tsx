@@ -49,8 +49,8 @@ const Row = ({ iconSrc, text }: { iconSrc: string; text: React.ReactNode }) => {
 };
 
 export function TeamCards() {
-  const [proSeats, setProSeats] = useState(2);
-  const [goldSeats, setGoldSeats] = useState(2);
+  const [proSeats, setProSeats] = useState(3);
+  const [goldSeats, setGoldSeats] = useState(3);
 
   return (
     <div className="mx-auto w-full max-w-[954px]">
