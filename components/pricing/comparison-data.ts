@@ -39,7 +39,7 @@ export const SECTIONS: Section[] = [
       {
         label: "AI models",
         info: "Choose from basic to frontier AI models for smarter content, sharper designs, and better output quality.",
-        free: { kind: "iconText", icon: "/ai-tier/standard.svg", iconWidth: 20, value: "Starter" },
+        free: { kind: "iconText", icon: "/ai-tier/starter.svg", iconWidth: 20, value: "Starter" },
         basic: { kind: "iconText", icon: "/ai-tier/standard.svg", iconWidth: 30, value: "Standard" },
         pro: { kind: "iconText", icon: "/ai-tier/advanced.svg", iconWidth: 40, value: "Advanced" },
         gold: { kind: "iconText", icon: "/ai-tier/frontier.svg", iconWidth: 50, value: "Frontier Models", tone: "magic" },
