@@ -29,7 +29,7 @@ export default function PricingPage() {
         <TierGrid mode={mode} />
       </section>
 
-      <section className="mt-16">
+      <section className="mt-8">
         <Testimonials />
       </section>
 

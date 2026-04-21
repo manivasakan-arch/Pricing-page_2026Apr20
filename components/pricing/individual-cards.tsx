@@ -144,9 +144,9 @@ export function IndividualCards() {
               style={{ backgroundImage: "linear-gradient(to bottom, #ff732d, #ff5500)" }}
             >
               <span className="absolute inset-0 bg-black/0 transition group-hover:bg-black/10 group-active:bg-black/15" />
-              <p className="absolute left-[20px] top-1/2 -translate-y-1/2 text-[16px] font-bold leading-[16px] text-white">Buy Now</p>
-              <div className="absolute right-[8px] top-1/2 -translate-y-1/2 flex items-center justify-center rounded-[2px] bg-white px-[10px] py-[4px]">
-                <p className="text-center text-[12px] leading-[1.33]">
+              <p className="absolute left-[16px] top-1/2 -translate-y-1/2 text-[16px] font-bold leading-[16px] text-white">Buy Now</p>
+              <div className="absolute right-[6px] top-1/2 -translate-y-1/2 flex items-center justify-center rounded-[2px] bg-white px-[8px] py-[3px]">
+                <p className="text-center text-[11px] leading-[1.3]">
                   <span className="text-brand">SAVE 10%</span>
                   <br aria-hidden />
                   <span className="text-ink-tertiary">FOR</span>{" "}
