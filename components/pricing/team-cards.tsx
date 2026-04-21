@@ -43,10 +43,10 @@ export function TeamCards() {
 
   return (
     <div className="mx-auto w-full max-w-[954px]">
-      <div className="relative h-[698px] w-full">
+      <div className="relative h-[560px] w-full">
         {/* Pro (highlighted) */}
         <div
-          className="absolute left-0 top-0 z-20 h-[698px] w-[318px] overflow-visible rounded-[24px] border-2 border-brand-border shadow-[0px_1px_2px_0px_rgba(0,0,0,0.08),0px_4px_10px_0px_rgba(0,0,0,0.06)]"
+          className="absolute left-0 top-0 z-20 h-[560px] w-[318px] overflow-visible rounded-[24px] border-2 border-brand-border shadow-[0px_1px_2px_0px_rgba(0,0,0,0.08),0px_4px_10px_0px_rgba(0,0,0,0.06)]"
           style={{
             backgroundImage: "linear-gradient(127.06deg, #ffffff 2.19%, #ffffff 41.38%, #ffeee5 98.14%)",
           }}
@@ -129,7 +129,7 @@ export function TeamCards() {
         </div>
 
         {/* Enterprise */}
-        <div className="absolute left-[612px] top-[21px] h-[597px] w-[342px] rounded-r-[24px] border border-line-primary bg-white">
+        <div className="absolute left-[612px] top-[21px] h-[520px] w-[342px] rounded-r-[24px] border border-line-primary bg-white">
           <div className="absolute left-[48px] top-[44px] flex h-[44px] w-[44px] items-center justify-center overflow-hidden">
             <img src="/enterprise-icon.png" alt="" className="h-[49.5px] w-[49.5px] object-contain" />
           </div>
