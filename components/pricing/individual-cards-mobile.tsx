@@ -128,27 +128,29 @@ export function IndividualCardsMobile() {
     <div className="flex flex-col gap-3">
       {/* Pro (highlighted, first) */}
       <CardShell highlighted>
-        <div
-          className="pointer-events-none absolute right-5 top-0 flex items-center justify-end gap-1 rounded-bl-[12px] rounded-br-[12px] py-1 pl-[6px] pr-[12px]"
-          style={{ backgroundImage: "linear-gradient(to right, #ffd1ba, #ffffff)" }}
-        >
-          <img src={A.coinIconSmall} alt="" className="h-3 w-3 object-contain" />
-          <p className="text-[10px] font-medium uppercase leading-none tracking-[0.5px] text-brand">Popular</p>
+        <div className="mb-4 flex w-full items-start justify-between gap-3">
+          <div className="flex flex-col items-start">
+            <img src={A.rocketIcon} alt="" className="h-[44px] w-[44px] object-contain" />
+            <div className="mt-3 flex items-center gap-2">
+              <p className="text-[24px] font-bold leading-none text-ink-primary">Pro</p>
+              <span
+                className="inline-flex items-center gap-1 rounded-full py-1 pl-[6px] pr-[10px]"
+                style={{ backgroundImage: "linear-gradient(to right, #ffd1ba, #ffe9db)" }}
+              >
+                <img src={A.coinIconSmall} alt="" className="h-3 w-3 object-contain" />
+                <p className="text-[10px] font-medium uppercase leading-none tracking-[0.5px] text-brand">Popular</p>
+              </span>
+            </div>
+          </div>
+          <div className="flex flex-col items-end">
+            <p className="text-right text-[16px] font-medium leading-[20px] text-ink-tertiary line-through">₹750</p>
+            <p className="text-right leading-none">
+              <span className="text-[24px] font-bold text-ink-primary">₹675</span>
+              <span className="text-[14px] leading-[1.43] text-ink-tertiary">/mo</span>
+            </p>
+            <p className="text-right text-[14px] leading-[1.43] text-ink-tertiary">billed yearly</p>
+          </div>
         </div>
-        <HeaderRow
-          iconSrc={A.rocketIcon}
-          title="Pro"
-          priceNode={
-            <>
-              <p className="text-right text-[16px] font-medium leading-[20px] text-ink-tertiary line-through">₹750</p>
-              <p className="text-right leading-none">
-                <span className="text-[24px] font-bold text-ink-primary">₹675</span>
-                <span className="text-[14px] leading-[1.43] text-ink-tertiary">/mo</span>
-              </p>
-              <p className="text-right text-[14px] leading-[1.43] text-ink-tertiary">billed yearly</p>
-            </>
-          }
-        />
         <button
           type="button"
           className="group relative h-[48px] w-full overflow-hidden rounded-[4px] transition hover:shadow-[0_6px_14px_-4px_rgba(255,85,0,0.45)]"
