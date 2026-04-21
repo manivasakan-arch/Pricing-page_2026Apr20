@@ -44,7 +44,7 @@ const INDIVIDUAL_TIERS: Tier[] = [
     price: "₹374",
     priceSuffix: "/mo",
     subnote: "billed yearly",
-    cta: "Get Basic Plan",
+    cta: "Buy Basic",
     ctaVariant: "outline",
     tooltip: "For those who want to make simple decks occasionally",
   },
@@ -55,7 +55,7 @@ const INDIVIDUAL_TIERS: Tier[] = [
     price: "₹675",
     priceSuffix: "/mo",
     subnote: "billed yearly",
-    cta: "Get Pro Plan",
+    cta: "Buy Pro",
     ctaVariant: "primary",
     withTimer: true,
     tooltip: "For those who want AI to craft polished, on-brand decks regularly",
@@ -67,7 +67,7 @@ const INDIVIDUAL_TIERS: Tier[] = [
     price: "₹8,975",
     priceSuffix: "/mo",
     subnote: "billed yearly",
-    cta: "Get Gold Plan",
+    cta: "Buy Gold",
     ctaVariant: "outline",
     tooltip: "For those who want the best AI models to lead mission-critical decks",
   },
@@ -89,7 +89,7 @@ const TEAM_TIERS: Tier[] = [
     price: "₹1,350",
     priceSuffix: "/user/mo",
     subnote: "billed yearly",
-    cta: "Get Pro Plan",
+    cta: "Buy Pro",
     ctaVariant: "primary",
     withTimer: true,
     tooltip: "For teams that want AI to craft polished, on-brand decks together",
@@ -101,7 +101,7 @@ const TEAM_TIERS: Tier[] = [
     price: "₹17,950",
     priceSuffix: "/user/mo",
     subnote: "billed yearly",
-    cta: "Get Gold Plan",
+    cta: "Buy Gold",
     ctaVariant: "outline",
     tooltip: "For teams that need frontier AI models for mission-critical decks",
   },
@@ -113,11 +113,10 @@ export function PriceSummary({ mode = "individual" }: { mode?: "individual" | "t
     <div className="mx-auto flex w-full max-w-[1000px] flex-col items-start">
       <div className="flex w-full flex-col items-start gap-2">
         <div className="flex w-full items-center gap-[2px] py-3">
-          {/* Label column — invisible spacer, matches comparison table label width */}
-          <div className="invisible flex w-[192px] shrink-0 items-center gap-2">
-            <div className="size-5 shrink-0" />
-            <p className="flex-1 text-[14px] font-medium leading-none text-ink-primary">
-              AI models
+          {/* Label column — section title aligned with comparison table labels */}
+          <div className="flex w-[192px] shrink-0 items-end self-stretch pb-3">
+            <p className="text-[22px] font-semibold leading-[1.2] tracking-[-0.01em] text-ink-primary">
+              Compare features across all our plans
             </p>
           </div>
 

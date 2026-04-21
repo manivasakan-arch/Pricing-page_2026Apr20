@@ -17,7 +17,11 @@ function CellRender({ cell }: { cell: Cell }) {
         </span>
       );
     case "check":
-      return <Check className="size-5 text-ink-primary" strokeWidth={1.5} />;
+      return (
+        <span className="inline-flex size-5 items-center justify-center rounded-full bg-success">
+          <Check className="size-[14px] text-white" strokeWidth={3} />
+        </span>
+      );
     case "text":
       if (cell.tone === "magic") {
         return (
