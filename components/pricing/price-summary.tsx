@@ -13,13 +13,14 @@ type Tier = {
 
 const TIERS: Tier[] = [
   {
-    name: "Free",
-    savings: <span className="line-through text-ink-tertiary">₹750</span>,
+    name: "Basic",
+    savings: <span className="line-through text-ink-tertiary">₹1,111</span>,
     savingsInvisible: true,
-    price: "₹0",
-    subnote: "14-day trial only",
-    cta: "Your current plan",
-    ctaVariant: "muted",
+    price: "₹374",
+    priceSuffix: "/mo",
+    subnote: "Billed yearly",
+    cta: "Get Basic Plan",
+    ctaVariant: "outline",
   },
   {
     name: "Pro",

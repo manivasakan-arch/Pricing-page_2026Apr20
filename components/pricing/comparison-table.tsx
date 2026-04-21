@@ -77,7 +77,7 @@ export function ComparisonTable() {
                     {row.badge && <Badge>{row.badge}</Badge>}
                   </div>
                   <div className="flex w-[266px] shrink-0 items-center justify-center">
-                    <CellRender cell={row.free} />
+                    <CellRender cell={row.basic} />
                   </div>
                   <div className="flex w-[266px] shrink-0 items-center justify-center">
                     <CellRender cell={row.pro} />
