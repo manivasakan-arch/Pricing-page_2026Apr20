@@ -32,7 +32,7 @@ export function Testimonials() {
           key={t.key}
           className="flex w-full shrink-0 flex-col items-start overflow-clip rounded-[12px] border border-[rgba(26,26,26,0.09)] bg-white p-5 md:w-[310px]"
         >
-          <div className="flex w-full flex-col items-start gap-[30px]">
+          <div className="flex w-full flex-1 flex-col items-start justify-between gap-[30px]">
             <blockquote className="w-full text-[16px] italic leading-[1.5] text-ink-primary md:w-[270px]" style={{ fontFamily: "var(--font-hedvig-serif), serif" }}>
               {`\u201C${t.quote}\u201D`}
             </blockquote>
