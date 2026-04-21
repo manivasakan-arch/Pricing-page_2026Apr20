@@ -27,13 +27,13 @@ function BuyTooltip({ text }: { text: string }) {
 
 type Tier = {
   name: string;
-  savings?: React.ReactNode;
+  strike?: string;
+  saveText?: string;
   price: string;
   priceSuffix?: string;
   subnote: string;
   cta: string;
   ctaVariant: "muted" | "primary" | "outline";
-  savingsInvisible?: boolean;
   withTimer?: boolean;
   tooltip: string;
 };
@@ -41,26 +41,20 @@ type Tier = {
 const TIERS: Tier[] = [
   {
     name: "Basic",
-    savings: <span className="line-through text-ink-tertiary">₹1,111</span>,
-    savingsInvisible: true,
     price: "₹374",
     priceSuffix: "/mo",
-    subnote: "billed yearly",
+    subnote: "Billed yearly",
     cta: "Get Basic Plan",
     ctaVariant: "outline",
     tooltip: "For those who want to make simple decks occasionally",
   },
   {
     name: "Pro",
-    savings: (
-      <p className="text-[14px] font-medium leading-[1.43] text-ink-secondary">
-        <span className="line-through">₹750</span>{" "}
-        <span className="text-success">· Save ₹900 yearly</span>
-      </p>
-    ),
+    strike: "₹750",
+    saveText: "Save ₹900 yearly",
     price: "₹675",
     priceSuffix: "/mo",
-    subnote: "billed yearly",
+    subnote: "Billed yearly",
     cta: "Get Pro Plan",
     ctaVariant: "primary",
     withTimer: true,
@@ -68,15 +62,11 @@ const TIERS: Tier[] = [
   },
   {
     name: "Gold",
-    savings: (
-      <p className="text-[14px] font-medium leading-[1.43] text-ink-secondary">
-        <span className="line-through">₹17,950</span>{" "}
-        <span className="text-success">· Save ₹107,664 yearly</span>
-      </p>
-    ),
+    strike: "₹17,950",
+    saveText: "Save ₹107,664 yearly",
     price: "₹8,975",
     priceSuffix: "/mo",
-    subnote: "billed yearly",
+    subnote: "Billed yearly",
     cta: "Get Gold Plan",
     ctaVariant: "outline",
     tooltip: "For those who want the best AI models to lead mission-critical decks",
@@ -101,33 +91,36 @@ export function PriceSummary() {
               key={t.name}
               className="flex w-[266px] shrink-0 flex-col items-center justify-center gap-4 px-3"
             >
-              <div className="flex w-full flex-col items-center justify-center gap-3">
-                <p className="whitespace-nowrap text-[18px] font-semibold leading-[1.55] text-ink-primary">
+              <div className="flex w-full flex-col items-center justify-center gap-2">
+                <p className="whitespace-nowrap text-[20px] font-bold leading-[1.3] text-ink-primary">
                   {t.name}
                 </p>
-                <div className="flex w-full flex-col items-center gap-0.5">
-                  <div
-                    className={clsx(
-                      "flex items-center",
-                      t.savingsInvisible && "opacity-0",
-                    )}
-                  >
-                    {t.savings}
-                  </div>
-                  <div className="flex w-[126px] items-baseline justify-center font-medium">
-                    <p className="text-[24px] leading-[1.3] tracking-[-0.24px] text-ink-primary">
-                      {t.price}
-                    </p>
-                    {t.priceSuffix && (
-                      <p className="text-[14px] leading-none text-ink-secondary">
-                        {t.priceSuffix}
-                      </p>
-                    )}
-                  </div>
-                  <p className="w-full text-center text-[12px] leading-[1.33] text-ink-secondary">
-                    {t.subnote}
-                  </p>
+                <p
+                  className={clsx(
+                    "text-[14px] font-medium leading-[1.43] text-success",
+                    !t.saveText && "invisible",
+                  )}
+                >
+                  {t.saveText ?? "placeholder"}
+                </p>
+                <div className="flex items-baseline justify-center gap-1">
+                  {t.strike && (
+                    <span className="text-[14px] font-medium leading-[1.43] text-ink-tertiary line-through">
+                      {t.strike}
+                    </span>
+                  )}
+                  <span className="text-[24px] font-bold leading-[1.3] tracking-[-0.24px] text-ink-primary">
+                    {t.price}
+                  </span>
+                  {t.priceSuffix && (
+                    <span className="text-[14px] leading-none text-ink-secondary">
+                      {t.priceSuffix}
+                    </span>
+                  )}
                 </div>
+                <p className="text-center text-[12px] leading-[1.33] text-ink-tertiary">
+                  {t.subnote}
+                </p>
               </div>
 
               <div className="group/buy relative w-full">
