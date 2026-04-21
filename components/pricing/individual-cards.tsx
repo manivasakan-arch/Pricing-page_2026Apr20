@@ -177,7 +177,7 @@ export function IndividualCards() {
         {/* Gold card */}
         <div className="absolute left-[636px] top-[21px] z-20 h-[495px] w-[318px] rounded-r-[24px] border border-line-primary bg-white">
           <div className="absolute left-[24px] top-[44px] flex h-[44px] w-[44px] items-center">
-            <img src={A.spaceshipIcon} alt="" className="h-[44px] w-[44px] object-contain" />
+            <img src={A.rocketIcon} alt="" className="h-[44px] w-[44px] object-contain" />
           </div>
           <p className="absolute left-[24px] top-[100px] text-[24px] font-bold leading-none text-ink-primary">Gold</p>
 

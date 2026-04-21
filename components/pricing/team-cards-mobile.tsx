@@ -120,7 +120,7 @@ export function TeamCardsMobile() {
       <CardShell>
         <div className="mb-4 flex w-full items-end justify-between gap-3">
           <div className="flex flex-col items-start">
-            <img src={A.spaceshipIcon} alt="" className="h-[37.4px] w-[37.4px] object-contain" />
+            <img src={A.rocketIcon} alt="" className="h-[44px] w-[44px] object-contain" />
             <p className="mt-3 text-[24px] font-bold leading-none text-ink-primary">Gold</p>
           </div>
           <div className="flex flex-col items-end">

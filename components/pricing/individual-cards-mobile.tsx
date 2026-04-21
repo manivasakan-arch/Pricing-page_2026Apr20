@@ -214,7 +214,7 @@ export function IndividualCardsMobile() {
       {/* Gold */}
       <CardShell>
         <HeaderRow
-          iconSrc={A.spaceshipIcon}
+          iconSrc={A.rocketIcon}
           title="Gold"
           rightAccessory={
             <div className="mb-2">

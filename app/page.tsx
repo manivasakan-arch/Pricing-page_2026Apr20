@@ -14,7 +14,7 @@ export default function PricingPage() {
   const [mode, setMode] = useState<PlanMode>("individual");
 
   return (
-    <div className="relative mx-auto w-full max-w-[1280px] px-[10px] pt-2 md:px-6">
+    <div className="relative mx-auto w-full max-w-[1280px] px-[10px] pt-8 md:px-6 md:pt-12">
       <button
         type="button"
         aria-label="Close"
@@ -25,11 +25,11 @@ export default function PricingPage() {
 
       <PricingHeader mode={mode} onChange={setMode} />
 
-      <section className="mt-8 animate-fade-up">
+      <section className="mt-10 animate-fade-up md:mt-12">
         <TierGrid mode={mode} />
       </section>
 
-      <section className="mt-8">
+      <section className="mt-12 md:mt-16">
         <Testimonials />
       </section>
 
