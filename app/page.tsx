@@ -29,11 +29,11 @@ export default function PricingPage() {
         <TierGrid mode={mode} />
       </section>
 
-      <section className="mt-12 md:mt-16">
+      <section className="mt-[68px] md:mt-[84px]">
         <Testimonials />
       </section>
 
-      <section className="sticky top-0 z-30 mt-16 -mx-6 hidden bg-white/85 px-6 backdrop-blur-md backdrop-saturate-150 md:block">
+      <section className="sticky top-0 z-30 mt-[84px] -mx-6 hidden bg-white/85 px-6 backdrop-blur-md backdrop-saturate-150 md:block">
         <PriceSummary />
       </section>
 
