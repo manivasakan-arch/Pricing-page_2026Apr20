@@ -14,7 +14,7 @@ export default function PricingPage() {
   const [mode, setMode] = useState<PlanMode>("individual");
 
   return (
-    <div className="relative mx-auto w-full max-w-[1280px] px-6 pt-2">
+    <div className="relative mx-auto w-full max-w-[1280px] px-[10px] pt-2 md:px-6">
       <button
         type="button"
         aria-label="Close"
