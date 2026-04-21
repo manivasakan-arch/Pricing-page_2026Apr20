@@ -113,11 +113,12 @@ export function PriceSummary({ mode = "individual" }: { mode?: "individual" | "t
     <div className="mx-auto flex w-full max-w-[1000px] flex-col items-start">
       <div className="flex w-full flex-col items-start gap-2">
         <div className="flex w-full items-center gap-[2px] py-3">
-          {/* Label column — invisible spacer, matches comparison table label width */}
-          <div className="invisible flex w-[192px] shrink-0 items-center gap-2">
-            <div className="size-5 shrink-0" />
-            <p className="flex-1 text-[14px] font-medium leading-none text-ink-primary">
-              AI models
+          {/* Label column — "Compare plans" title, matches comparison table label width */}
+          <div className="flex w-[192px] shrink-0 items-start self-stretch pt-1">
+            <p className="text-[28px] font-semibold leading-[1.2] tracking-[-0.24px] text-ink-primary">
+              Compare
+              <br />
+              plans
             </p>
           </div>
 
