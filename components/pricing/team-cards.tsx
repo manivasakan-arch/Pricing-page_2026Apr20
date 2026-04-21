@@ -23,6 +23,17 @@ const ICON_MAP: Record<string, PhosphorIcon> = {
   [A.files]: Files,
 };
 
+function BuyTooltip({ text }: { text: string }) {
+  return (
+    <div className="pointer-events-none absolute left-1/2 top-full z-40 mt-2 -translate-x-1/2 opacity-0 transition-opacity group-hover/buy:opacity-100">
+      <div className="absolute -top-1 left-1/2 -translate-x-1/2 border-[5px] border-transparent border-b-[#1a1a1a]" />
+      <div className="w-[220px] rounded-[8px] bg-[#1a1a1a] px-3 py-2 text-center text-[12px] leading-[1.4] text-white">
+        {text}
+      </div>
+    </div>
+  );
+}
+
 const Row = ({ iconSrc, text }: { iconSrc: string; text: React.ReactNode }) => {
   const Icon = ICON_MAP[iconSrc] ?? StarFour;
   return (
@@ -66,14 +77,17 @@ export function TeamCards() {
           <div className="absolute left-[24px] top-[200px] w-[270px]">
             <UserSelect value={proSeats} onChange={setProSeats} />
           </div>
-          <button
-            type="button"
-            className="group absolute left-[24px] top-[246px] h-[48px] w-[270px] overflow-hidden rounded-[4px] transition hover:shadow-[0_6px_14px_-4px_rgba(255,85,0,0.45)]"
-            style={{ backgroundImage: "linear-gradient(to bottom, #ff732d, #ff5500)" }}
-          >
-            <span className="absolute inset-0 bg-black/0 transition group-hover:bg-black/10 group-active:bg-black/15" />
-            <p className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[16px] font-bold leading-[16px] text-white">Buy Now</p>
-          </button>
+          <div className="group/buy absolute left-[24px] top-[246px] w-[270px]">
+            <button
+              type="button"
+              className="group relative h-[48px] w-full overflow-hidden rounded-[4px] transition hover:shadow-[0_6px_14px_-4px_rgba(255,85,0,0.45)]"
+              style={{ backgroundImage: "linear-gradient(to bottom, #ff732d, #ff5500)" }}
+            >
+              <span className="absolute inset-0 bg-black/0 transition group-hover:bg-black/10 group-active:bg-black/15" />
+              <p className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[16px] font-bold leading-[16px] text-white">Buy Now</p>
+            </button>
+            <BuyTooltip text="For teams that want AI to craft polished, on-brand decks together" />
+          </div>
           <div className="absolute left-[24px] top-[304px] flex w-[270px] items-center justify-center gap-2">
             <CheckCircle size={14} weight="fill" className="shrink-0 text-success" />
             <p className="text-[12px] leading-[1.33] text-success">
@@ -109,12 +123,15 @@ export function TeamCards() {
           <div className="absolute left-[24px] top-[180px] w-[270px]">
             <UserSelect value={goldSeats} onChange={setGoldSeats} showDiscount={false} />
           </div>
-          <button
-            type="button"
-            className="absolute left-[24px] top-[226px] flex h-[48px] w-[270px] items-center justify-center rounded-[4px] border border-brand transition hover:bg-brand-50 active:bg-brand-100"
-          >
-            <p className="text-[16px] font-bold leading-[16px] text-brand">Buy Now</p>
-          </button>
+          <div className="group/buy absolute left-[24px] top-[226px] w-[270px]">
+            <button
+              type="button"
+              className="flex h-[48px] w-full items-center justify-center rounded-[4px] border border-brand transition hover:bg-brand-50 active:bg-brand-100"
+            >
+              <p className="text-[16px] font-bold leading-[16px] text-brand">Buy Now</p>
+            </button>
+            <BuyTooltip text="For teams that need frontier AI models for mission-critical decks" />
+          </div>
           <div className="absolute left-[24px] top-[284px] flex w-[270px] items-center justify-center gap-2">
             <CheckCircle size={14} weight="fill" className="shrink-0 text-success" />
             <p className="text-[12px] leading-[1.33] text-success">{"You'll save ₹XX,XXX this year"}</p>
@@ -140,12 +157,15 @@ export function TeamCards() {
             <img src="/enterprise-logos.svg" alt="Google, Adobe, Notion" className="w-full h-auto object-contain" />
           </div>
 
-          <button
-            type="button"
-            className="absolute left-[48px] top-[227px] flex h-[48px] w-[270px] items-center justify-center rounded-[4px] border border-brand transition hover:bg-brand-50 active:bg-brand-100"
-          >
-            <p className="text-[16px] font-bold leading-[16px] text-brand">Talk to Sales</p>
-          </button>
+          <div className="group/buy absolute left-[48px] top-[227px] w-[270px]">
+            <button
+              type="button"
+              className="flex h-[48px] w-full items-center justify-center rounded-[4px] border border-brand transition hover:bg-brand-50 active:bg-brand-100"
+            >
+              <p className="text-[16px] font-bold leading-[16px] text-brand">Talk to Sales</p>
+            </button>
+            <BuyTooltip text="For organizations that need dedicated support, SSO, and custom contracts" />
+          </div>
         </div>
       </div>
     </div>
