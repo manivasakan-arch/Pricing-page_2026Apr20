@@ -107,7 +107,7 @@ export function TeamCards() {
             <p className="text-right text-[14px] leading-[1.43] text-ink-tertiary">billed yearly</p>
           </div>
           <div className="absolute left-[23px] top-[172px] w-[240px]">
-            <UserSelect value={goldSeats} onChange={setGoldSeats} />
+            <UserSelect value={goldSeats} onChange={setGoldSeats} showDiscount={false} />
           </div>
           <button
             type="button"

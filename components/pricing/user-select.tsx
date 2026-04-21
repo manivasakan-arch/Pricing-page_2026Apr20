@@ -11,9 +11,11 @@ const DISCOUNT_THRESHOLD = 5;
 export function UserSelect({
   value,
   onChange,
+  showDiscount = true,
 }: {
   value: number;
   onChange: (n: number) => void;
+  showDiscount?: boolean;
 }) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -51,7 +53,7 @@ export function UserSelect({
           >
             {OPTIONS.map((n) => (
               <li key={n}>
-                {n === DISCOUNT_THRESHOLD && (
+                {showDiscount && n === DISCOUNT_THRESHOLD && (
                   <>
                     <div className="mx-[8px] my-[4px] h-px bg-line-secondary" />
                     <div className="px-[8px] pb-[4px]">
